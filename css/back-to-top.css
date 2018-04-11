@@ -1,0 +1,67 @@
+
+.back-to-top,
+.back-to-top::after,
+.back-to-top-text {
+	transition: all 0.25s ease-in-out;
+}
+
+.back-to-top,
+.back-to-top::after {
+	position: fixed;
+	height: 45px;
+	width: 45px;
+	color: #262728;
+	opacity: 0.75;
+	padding: 3px 5px;
+	font-size: 12px;
+	font-weight: bold;
+	border: 1px solid #262728;
+}
+
+.back-to-top {
+	right: 1.5%;
+	bottom: -12%;
+	z-index: 3;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transform: rotate(-45deg);
+	background: #fff;
+}
+
+.back-to-top::after {
+	display: inline-block;
+	content: "";
+	right:  -1px;
+	bottom: 0;
+	border-width: 1px;
+	background: transparent;
+}
+
+.back-to-top-text {
+	display: block;
+	transform: rotate(45deg) translate(25%,75%);
+}
+
+.back-to-top:hover,
+.back-to-top:focus,
+.back-to-top:hover::after,
+.back-to-top:focus::after,
+.back-to-top:hover .back-to-top-text,
+.back-to-top:focus .back-to-top-text {
+	opacity: 1;
+}
+
+.back-to-top:hover::after,
+.back-to-top:focus::after {
+	transform: translate(25%,-25%);
+}
+
+.back-to-top:hover .back-to-top-text,
+.back-to-top:focus .back-to-top-text {
+	transform: rotate(45deg) translate(25%,0);
+}
+
+.show-back-to-top {
+	bottom: 4%;
+}
