@@ -1,0 +1,115 @@
+* {
+    font-size: 14px;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0 !important;
+}
+
+.row {
+    width: 100%
+}
+
+.container {
+    position: relative;
+}
+
+.header {
+    background-color: #e7731f;
+}
+
+.textlogo p {
+    margin-bottom: 0;
+}
+
+.lisgr {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    width: 30%;
+}
+
+.lisgr ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lisgr li:first-child {
+    margin-top: 0;
+}
+
+.lisgr li img.icongr {
+    position: absolute;
+    left: 0;
+    top: 35%;
+}
+
+.lisgr ul li div {
+    display: inline-block;
+}
+
+.grwr {
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.lisgr li {
+    width: 100%;
+    position: relative;
+    padding-left: 60px;
+    margin: 5px 0;
+}
+
+.ctgr {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    color: #f05a22;
+    font-weight: bold;
+}
+
+div.form-booking {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #fff;
+    background: #f7f7f8;
+    width: 295px;
+    text-align: center;
+}
+
+.formhead {
+    background: #e66a1f;
+    padding: 20px;
+}
+
+#banner {
+    background: url(https://cumargold.vn/landing/img/xbg0.png.pagespeed.ic.-isZPdYvLF.png) no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.parallax-1 {
+    background-image: url("http://via.placeholder.com/300x300");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-2 {
+    background-image: url("http://via.placeholder.com/300x300");
+
+    min-height: 500px; 
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
