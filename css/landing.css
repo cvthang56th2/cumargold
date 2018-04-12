@@ -2,9 +2,38 @@
     font-size: 14px;
 }
 
+body {
+    font-size: 14px;
+    font-family: 'Roboto',sans-serif;
+    line-height: 20px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
 .container-fluid {
     padding: 0;
     margin: 0 !important;
+}
+
+.row {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+.part {
+    width: 100%;
+    padding: 45px 0;
+    position: relative;
 }
 
 .row {
@@ -19,19 +48,45 @@
     background-color: #e7731f;
 }
 
+.header .container {
+    margin: auto;
+    max-width: 90%;
+    display: flex;
+    padding: 30px 0;
+    align-items: center;
+}
+
+.header .logo {
+    width: 35%;
+}
+
+.header .textlogo {
+    width: 65%;
+    color: #fff;
+    float: left;
+}
+
+.textlogo h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.textlogo p {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
 .textlogo p {
     margin-bottom: 0;
 }
 
 .lisgr {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    width: 30%;
+    width: 50%;
 }
 
 .lisgr ul {
     list-style-type: none;
-    padding: 0;
 }
 
 .lisgr li:first-child {
@@ -83,9 +138,63 @@ div.form-booking {
     text-align: center;
 }
 
+.formct {
+    padding: 10px 20px;
+}
+
 .formhead {
     background: #e66a1f;
     padding: 20px;
+}
+
+.formct .center {
+    margin-bottom: 10px;
+}
+
+.wrap-flex {
+    display: flex;
+}
+
+.formct .right {
+    font-size: 13px;
+    color: #f16522;
+    font-weight: bold;
+}
+
+.right {
+    text-align: right;
+}
+
+.btnform {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background-color: #f79b1b;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    padding: 7px 20px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btnform:hover {
+    opacity: .8;
+}
+
+.formct input {
+    width: 100%;
+    background: #e2e3e4;
+    border: none;
+    padding: 10px;
+    max-width: 100%;
+    margin-bottom: 10px;
 }
 
 #banner {
@@ -94,9 +203,65 @@ div.form-booking {
     background-size: cover;
 }
 
+#part-1 .left-part-1 {
+    color: #fff;
+    position: relative;
+    width: 45%;
+}
+
+#part-1 .left-part-1 h2:first-child {
+    background: #f48120;
+    padding: 10px 20px;
+    font-size: 25px;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    text-align: center;
+    margin-top: 0;
+}
+
+#part-1 .left-part-1 .right {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+#part-1 .left-part-1 .right span {
+    font-weight: normal;
+    color: rgba(255,255,255,.7);
+}
+
+
+.left-part-1-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 43.8%;
+    background: url(https://cumargold.vn/landing/img/xbg1.png.pagespeed.ic.zQfFwrz5oN.webp) no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+
+#part-1 .right-part-1 {
+    position: relative;
+    width: 55%;
+}
+
+#part-1 .right-part-1-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 56.2%;
+    background: url(https://cumargold.vn/landing/img/xbg2.png.pagespeed.ic.JaqbYVDRVk.webp) no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
 .parallax-1 {
     background-image: url("http://via.placeholder.com/300x300");
-    min-height: 500px; 
+    min-height: 660px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -104,12 +269,285 @@ div.form-booking {
 }
 
 .parallax-2 {
-    background-image: url("http://via.placeholder.com/300x300");
-
-    min-height: 500px; 
-
+    background-image: url("http://via.placeholder.com/400x400");
+    min-height: 370px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.containersub {
+    margin: 0 auto;
+    position: relative;
+    max-width: 90%;
+}
+
+.sellcter {
+    position: relative;
+    padding: 0 50px 0 310px;
+    height: 276px;
+}
+
+.imgse {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sellgr {
+    background-color: rgba(255,241,0,.8);
+    height: 276px;
+    color: #ec1c24;
+    padding: 50px 50px 50px 100px;
+}
+
+.sellgr ul li {
+    padding: 5px 0 5px 50px;
+    background: url(https://cumargold.vn/landing/img/xicon5.png.pagespeed.ic.LEJiuhCp7_.webp) no-repeat;
+}
+
+#part-2 .loggor img.logore {
+    float: left;
+    margin-right: 40px;
+}
+
+#part-2 .loggor h2 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    color: #f37920;
+    float: left;
+    margin: 5px 0 30px;
+    font-weight: bold;
+}
+
+#part-2 .cotn {
+    max-width: 55%;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    color: #f37920;
+}
+
+#part-3 {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    background: #f6921e;
+    color: #fff;
+}
+
+#part-3 p {
+    margin-bottom: 0;
+}
+
+#part-3 .part-3-img {
+    margin-bottom: 20px;
+}
+
+#part-5 {
+    padding-top: 0;
+}
+
+.part-5-head {
+    text-align: center;
+}
+
+.part-5-head span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ec1c24;
+    margin-left: 10%;
+    display: inline-block;
+}
+
+.part-5-content {
+    text-align: center;
+    color: #4d4d4f;
+    font-weight: bold;
+}
+
+.part-5-content p {
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+
+.part-5-content .row {
+    padding-top: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 !important;
+}
+
+.part-5-content .row .part-5-content-div {
+    width: 17%;
+}
+
+
+#part-6 {
+    background: #aac2d0;
+    padding: 50px;
+}
+
+#part-6 h2 {
+    color: #ef4e23;
+    margin-bottom: 80px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.title {
+    background: #ef4e23;
+    display: inline-block;
+    padding: 15px 50px;
+    color: #fff;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    font-size: 30px;
+}
+
+#part-7 {
+    padding: 4%;
+}
+
+#part-7 .center {
+    margin-bottom: 30px;
+}
+
+#part-7 .kl {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#part-7 h5 {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#part-8 .center {
+    margin-bottom: 30px;
+}
+
+#part-8 h4 {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 18px 0;
+}
+
+#part-8 .col-md-9 a {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+}
+
+#part-8 ul li {
+    padding-top: 5px;
+    margin-bottom: 30px;
+}
+
+.listvideo {
+    background: #f48120;
+    padding: 10px;
+    margin: 0 -10px;
+    color: #fff;
+    width: 95%;
+}
+
+.bordered-white {
+    border: 1px solid #fff;
+}
+
+#part-9 .center {
+    margin-bottom: 30px;
+}
+
+#part-9 h4 {
+    color: #f26e21;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+#part-10 {
+    background: #de771c;
+    color: #fff;
+}
+
+#part-10 .col-md-3 {
+    text-align: center;
+}
+
+#part-10 .col-md-3 p {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.goldgra {
+    width: 85%;
+    background: #ea841a;
+    padding: 20px;
+    color: #fff;
+}
+
+.hg1 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 20px;
+}
+
+.goff {
+    padding: 10px 0 0;
+    border-top: 1px solid #fff;
+    margin-top: 10px;
+}
+
+.margin-top-160 {
+    margin-top: 160px;
+}
+
+#part-11 {
+    background: #fbae17;
+}
+
+#part-11 h2 {
+    font-size: 35px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#wrap-footer {
+    height: 50px;
+    background: #f1801f;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.part-9-wrap-img {
+    position: relative;
+}
+
+.part-9-wrap-img img {
+    position: absolute;
+    top: 0px;
+    left: -200px;
+    max-width: 450px;
 }
