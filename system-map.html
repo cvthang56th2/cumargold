@@ -1,29 +1,207 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
-    <script src="./lib/jquery.js"></script>
-  </head>
-  <body>
-    <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    <div>
-        <button id="btn1">
-            address 1
-        </button>
-        <button id="btn2">
-            address 2
-        </button>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CumarGold</title>
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/system-map.css">
+  <link rel="stylesheet" href="./css/back-to-top.css">
+  <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./lib/slick/slick-theme.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <script src=".//lib/jquery.js"></script>
+  <script src="./lib/bootstrap/js/popper.min.js"></script>
+  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+  <div class="container-fluid" id="wrap-body">
+    <!-- Top Navbar -->
+    <div id="top-navbar">
+      <img src="./images/logo.webp" alt="" class="img-responsive">
+      <img src="./images/dathang.webp" alt="" class="img-responsive" style="float: right">
     </div>
-    <script src="./js/map-script.js">
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsYMUI0v-8MsQJlqyZ031GZ7YQMOUcmBk&callback=initMap">
-    </script>
-  </body>
+
+
+    <nav class="navbar navbar-expand-md sticky-top" id="navbar">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="collapsingNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+              Sản phẩm
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Tại sao chọn CumarGold?</a>
+              <a class="dropdown-item" href="#">Hỗ trợ điều trị đau dạ dày</a>
+              <a class="dropdown-item" href="#">Ý kiến chuyên gia</a>
+              <a class="dropdown-item" href="#">Nghiên cứu khoa học</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hỏi đáp của chuyên gia</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+              Cảm nhận của khách hàng
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Dạ dày</a>
+              <a class="dropdown-item" href="#">Ung thư</a>
+              <a class="dropdown-item" href="#">Làm đẹp</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+              Tin tức
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Tin tức tổng hợp</a>
+              <a class="dropdown-item" href="#">Sự kiện Cumargold</a>
+              <a class="dropdown-item" href="#">Kiến thức bệnh học</a>
+              <a class="dropdown-item" href="#">Video</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hệ thống nhà thuốc</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Đặt hàng</a>
+          </li>
+
+
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item wrap-flex-align-center">
+            <div class="search_form">
+              <form action="" method="GET" id="search_form">
+                <input type="search" value="" name="keyword" id="keyword" placeholder="Tìm kiếm ...">
+                <button type="submit" class="search-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Part 1 -->
+    <div id="part-1">
+      <a href="" class="text-gray">Trang chủ </a> /
+      <a href="" class="text-gray">Hỏi đáp với chuyên gia</a>
+    </div>
+    <h3>My Google Maps Demo</h3>
+    <div class="main-content">
+
+      <div class="wrap-list-address">
+        <ul>
+          <li id="btn1" class="btn btn-primary">1111111</li>
+          <li id="btn2" class="btn btn-primary">222222</li>
+          <li id="btn3" class="btn btn-primary">333333</li>
+          <li id="btn4" class="btn btn-primary">444444</li>
+          <li id="btn5" class="btn btn-primary">555555</li>
+          <li id="btn6" class="btn btn-primary">666666</li>
+          <li id="btn7" class="btn btn-primary">777777</li>
+        </ul>
+      </div>
+      <div class="wrap-map">
+        <div id="map"></div>
+      </div>
+      
+      
+    </div>
+    <ul id="listLatLng">
+    </ul>
+
+    <!-- Footer -->
+    <div id="wrap-footer">
+      <div class="row wrap-flex-align-center">
+        <div class="col-md-3">
+          <div class="social-network">
+            <ul>
+              <li>
+                <a href="">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fab fa-pinterest-p"></i>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <img src="./images/dathongbao.png" alt="" width="100%" class="img-responsive">
+        </div>
+        <div class="col-md-6">
+          <p>© 2016 - Bản Quyền thuộc Công Ty Cổ Phần Dược Mỹ Phẩm CVI</p>
+          <p> Thửa đất số 24, Lô 06 khu 4.1CC tuyến phố Láng Hạ - Thanh Xuân, p.Nhân Chính, q.Thanh Xuân, Hà Nội. (ngõ 81 đường
+            Lê Văn Lương, đi thẳng vào khoảng 100m)</p>
+          <p>Điện thoạị: 04.3668.6938</p>
+          <p>GPKD số 0105440255 do sở KH &amp; ĐT TP Hà Nội cấp ngày 05/08/2011</p>
+        </div>
+        <div class="col-md-3">
+          <p>
+            <b>QUY CHẾ HOẠT ĐỘNG </b>
+          </p>
+          <p>
+            <a href="">Quy chế hoạt động TMĐT</a>
+          </p>
+          <p>
+            <a href="">Chính sách giao nhận, chuyển hàng</a>
+          </p>
+          <p>
+            <a href="">Chính sách đổi trả hàng</a>
+          </p>
+          <p>
+            <a href="">Chính sách bảo mật</a>
+          </p>
+          <p>
+            <a href="">Hướng dẫn mua hàng, thanh toán</a>
+          </p>
+        </div>
+
+        <ul>
+          Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh
+          <br> (*) Hiệu quả có thể khác nhau tùy thuộc vào cơ địa từng người
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="#content" class="back-to-top">
+    <span class="back-to-top-text">Top</span>
+  </a>
+  <script src="./js/hoi-dap.js"></script>
+  <script src="./js/scripts.js"></script>
+  <script src="./js/map-script.js">
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsYMUI0v-8MsQJlqyZ031GZ7YQMOUcmBk&callback=initMap">
+  </script>
+</body>
+
 </html>

@@ -8,6 +8,29 @@
 	padding: 10px 20px;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #f37021;
+    border-color: #f37021;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #18ce79;
+    border-color: #18ce79;
+}
+
+.btn {
+    padding: 14px 18px;
+    font-size: 14px;
+    line-height: 1.2;
+    border-radius: 50px;
+    border-width: 2px;
+    font-weight: 700;
+    min-width: 132px;
+    transition: .3s ease-out;
+}
+
 .center {
 	text-align: center;
 }
@@ -16,11 +39,23 @@
 	outline: none;
 }
 
+h1, h2, h3,h4, h5, h6 {
+	color: #585858;
+}
+
+.cumar_h2 {
+    color: #f37021;
+    font-family: 'Open Sans',sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+
 body {
     font-size: 14px;
     font-family: 'Roboto',sans-serif;
     line-height: 20px;
-    color: #333;
+	color: #666;
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -31,6 +66,7 @@ body {
 }
 
 #navbar {
+	background-color: #fff;
 	padding: 0 3%;
 	display: flex;
 	align-content: center;
@@ -38,6 +74,57 @@ body {
 	box-shadow: 0 1px 10px 0 rgba(0,0,0,.07);
 }
 
+#navbar .navbar-nav li {
+	color: #000;
+	padding: 5px;
+	border-right: 1px solid #f3f3f3;
+}
+
+#navbar .navbar-nav li a {
+	position: relative;
+    display: block;
+    background: transparent;
+	transition: .3s all ease;
+	font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #585858;
+}
+
+#navbar .navbar-nav li a:hover {
+	color: #f37021;
+}
+
+#navbar .navbar-nav li:hover .dropdown-menu {
+	display: block;
+}
+
+#navbar .navbar-nav li .dropdown-menu {
+	margin-top: 20px;
+	padding: 25px 20px;
+}
+
+#navbar .navbar-nav .nav-item .dropdown-menu a {
+	display: inline-block;
+    color: #585858;
+	background: transparent;
+	border-bottom: 1px dotted #f3f3f3;
+	font-weight: normal;
+	padding: 5px 30px 5px 0;
+}
+
+.text-primary {
+    color: #f37021 !important;
+}
+
+a {
+    color: #f37021;
+    text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
 
 #navbar>div {
 	border-top: 1px solid #f3f3f3;
@@ -51,6 +138,22 @@ body {
 
 #search_form {
 	position: relative;
+}
+
+.search_form #keyword {
+    line-height: 25px;
+    padding-left: 3px;
+    width: 153px;
+    float: left;
+    border: none;
+}
+
+.search_form {
+    position: relative;
+    border: 1px solid #999;
+    border-radius: 4px;
+    width: 185px;
+    overflow: hidden;
 }
 
 .search-btn{
@@ -69,25 +172,161 @@ body {
 	padding: 0 8%;
 }
 
+#wrap-introduce h4 {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
 #wrap-about {
 	background: #f3f3f3;
 	padding: 0 5%;
+	padding-bottom: 20px;
+	padding-top: 30px;
 }
 
 .about-div-content {
 	background-color: #fff;
+	padding: 10px;
+}
+
+.about-icon {
+	font-size: 80px;
+	color: #f37021;
+	margin-bottom: 10px;
+}
+.text-black {
+    color: #58595b;
+}
+.text-bold, strong {
+    font-weight: 700;
+}
+
+.text-big {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+#wrap-jumbotron {
+	background-image: url("http://via.placeholder.com/1360x300");
+	background-size: cover;
+	background-position: center center;
+	color: #fff;
+}
+
+.opensan_family {
+    font-family: 'Open Sans',sans-serif;
+}
+
+#wrap-jumbotron h5 {
+	font-size: 30px;
+	color: #fff;
+}
+
+.jumbotron {
+	background: none;
+	margin: 0;
+}
+
+.border-white {
+	border: 1px solid #fff;
 }
 
 #wrap-recommend {
 	padding: 0 15%;
 }
 
+.cumar_home_midrow {
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+	font-size: 20px;
+	background: #f46f22;
+	color: #fff;
+}
+
 #wrap-statistical {
-	padding: 0 3%;
+	padding: 50px 3%;
+	background-image: url("http://via.placeholder.com/1360x300");
+	background-size: cover;
+	background-position: center center;
+	color: #fff;
+}
+
+.custom-feeling-slide-prev-btn {
+	background: none;
+	color: rgba(0,0,0,.3);
+	font-size: 45px;
+	border: none;
+	position: absolute;
+	top: 50%;
+	left: 2%;
+	transform: translateY(-50%);
+	z-index: 111;
+	cursor: pointer;
+}
+
+.custom-feeling-slide-prev-btn:focus {
+	outline: none;
+}
+
+.custom-feeling-slide-next-btn {
+	background: none;
+	color: rgba(0,0,0,.3);
+	font-size: 45px;
+	border: none;
+	position: absolute;
+	top: 50%;
+	right: 2%;
+	transform: translateY(-50%);
+	z-index: 111;
+	cursor: pointer;
+}
+
+.custom-feeling-slide-next-btn:focus {
+	outline: none;
+}
+
+
+.count {
+	margin: 15px 0;
+	font-size: 30px;
+}
+
+.custom-feeling-div {
+	padding: 0 20px;
+}
+
+.custom-feeling-div .row {
+	background: #f3f3f3;
+	fill: #f3f3f3;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.statistical-icon {
+	font-size: 60px;
+	margin-bottom: 10px;
 }
 
 #wrap-custom-feeling {
-	padding: 0 3%;
+	padding: 15px 3%;
+}
+
+.comment_guest {
+	font-weight: bold;
+	text-align: left;
+	color: #f37021;
+}
+
+.comment_address {
+    color: #58595b;
+    font-weight: bold;
+    text-align: left;
+    font-size: 12px;
 }
 
 #wrap-partner {
@@ -95,15 +334,27 @@ body {
 }
 
 #wrap-booking-news-connect {
-	padding: 0 3%;
+	padding: 20px 3%;
+	background-color: #f37021;
+	color: #fff;
 }
 
+#wrap-booking {
+	margin-bottom: 10px;
+}
+
+#wrap-news a {
+	color: #fff;
+}
+
+.news-title {
+	font-weight: 700;
+}
 
 #wrap-footer {
 	background-color: rgb(147, 149, 152);
 	color: #fff;
 	padding: 20px 3%;
-	margin-top: 30px;
 }
 
 #wrap-footer a{
@@ -118,6 +369,42 @@ body {
 	display: inline;
 	padding: 10px;
 	font-size: 23px;
+}
+
+.pos-relative {
+	position: relative;
+}
+
+.banner-content {
+	position: absolute; top: 50%; left: 20%; transform: translate(-50%, -50%);
+}
+
+.banner-content h1 {
+	font-size: 80px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.banner-content p {
+	font-size: 18px;
+	color: #fff;
+}
+
+.banner-content a {
+	color: #fff;
+}
+
+.banner-content a:hover {
+	background: #fff;
+	color: rgb(65, 59, 59);
+}
+
+.banner-img {
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 }
 
 .banner-slide-dots {
@@ -156,6 +443,10 @@ body {
 	padding: 0 3%
 }
 
+.left {
+	text-align: left;
+}
+
 .left-content {
 	width: 66.6%;
 	padding-right: 3%;
@@ -174,4 +465,9 @@ body {
 .wrap-flex-align-center {
     display: flex;
     align-items: center;
+}
+
+.btn-gray {
+    background: #ccc;
+    color: #fff;
 }

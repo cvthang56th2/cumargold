@@ -3,7 +3,8 @@ $('#wrap-banner-slide').slick({
     autoplaySpeed: 2000,
     dots: true,
     swipe: false,
-    dotsClass: "banner-slide-dots"
+    dotsClass: "banner-slide-dots",
+    arrows: false
 });
 
 $('#partner-slide').slick({
@@ -13,6 +14,16 @@ $('#partner-slide').slick({
     autoplay: true,
     autoplaySpeed: 500,
     swipe: false
+});
+
+$('.custom-feeling-slide').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: '<button type="button" class="custom-feeling-slide-prev-btn"><i class="fas fa-angle-left"></i></button>',
+    nextArrow: '<button type="button" class="custom-feeling-slide-next-btn"><i class="fas fa-angle-right"></i></button>'
 });
 
 // Back to top button
@@ -40,4 +51,16 @@ $('#advertisement').slick({
 $('#expert-opinions').slick({
     autoplay: true,
     autoplaySpeed: 1000
+});
+
+$('.count').each(function () {
+    $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+    }, {
+            duration: 6000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
 });
