@@ -1,0 +1,51 @@
+
+#part-1 {
+    padding: 15px;
+}
+
+.text-gray {
+    color: #585858;
+}
+
+#nav-content ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-content ul li {
+    display: inline;
+}
+
+.li-description .pictures {
+    display: flex;
+    justify-content: center;
+}
+
+#product-info ul {
+    padding: 0;
+}
+
+#research ol { 
+    counter-reset: item;
+    padding: 0
+}
+#research ol li { 
+    display: block 
+}
+#research ol li:before { 
+    content: counters(item, ".") ". "; 
+    counter-increment: item;
+}
+
+
+#wrap-footer .social-network ul {
+    text-align: center;
+}
+
+#advertisement {
+    cursor: pointer;
+}
+
+#expert-opinions {
+    cursor: pointer;
+}

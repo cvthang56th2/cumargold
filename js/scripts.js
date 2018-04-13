@@ -30,3 +30,14 @@ $('.back-to-top').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 400);
     return false;
 });
+
+$('#advertisement').slick({
+    autoplay: true,
+    autoplaySpeed: 1000,
+    arrows: false
+});
+
+$('#expert-opinions').slick({
+    autoplay: true,
+    autoplaySpeed: 1000
+});

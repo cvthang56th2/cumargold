@@ -82,7 +82,8 @@ ul li {
 }
 
 .lisgr {
-    width: 30%;
+    width: 45%;
+    margin: 0 25%;
 }
 
 .lisgr ul {
@@ -96,9 +97,8 @@ ul li {
 .lisgr li img.icongr {
     position: absolute;
     left: 0;
-    top: 35%;
+    top: 5px;
 }
-
 .lisgr ul li div {
     display: inline-block;
 }
@@ -111,11 +111,23 @@ ul li {
     -webkit-border-radius: 5px 5px 5px 5px;
 }
 
+.imgbann {
+    position: absolute;
+    top: 256px;
+    right: 273px;
+    width: 445px;
+}
+
 .lisgr li {
     width: 100%;
     position: relative;
+    padding: 15px 0;
     padding-left: 60px;
-    margin: 5px 0;
+    margin: 0;
+    color: #ef4e24;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px dotted #ef4e24;
 }
 
 .ctgr {
@@ -198,82 +210,14 @@ div.form-booking {
 }
 
 #banner {
-    background: url(https://cumargold.vn/landing/img/xbg0.png.pagespeed.ic.-isZPdYvLF.png) no-repeat;
+    background: url("http://via.placeholder.com/1360x500") no-repeat;
     background-position: center top;
     background-size: cover;
+    height: 500px;
+    padding-bottom: 100px;
 }
-
-#part-1 .left-part-1 {
-    color: #fff;
-    position: relative;
-    width: 45%;
-    padding: 45px 45px 0 45px;
-}
-
-#part-1 .left-part-1>h2 {
-    background: #f48120;
-    padding: 10px 20px;
-    font-size: 25px;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    text-align: center;
-    margin-top: 0;
-}
-
-#part-1 .left-part-1 .row {
-    margin-bottom: 50px;
-}
-
-#part-1 .left-part-1 .right {
-    margin: 20px 0;
-    font-weight: bold;
-}
-
-#part-1 .bttomc h2 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 21px;
-    font-weight: 700;
-}
-
-#part-1 .left-part-1 .right span {
-    font-weight: normal;
-    color: rgba(255,255,255,.7);
-}
-
-
-.left-part-1-bg {
-    background: url("../images/left-bg.webp") no-repeat;
-    background-size: cover;
-}
-
-
-#part-1 .right-part-1 {
-    position: relative;
-    width: 55%;
-    padding: 45px 45px 0 45px;
-}
-
-#part-1 .right-part-1-bg {
-    background: url("../images/right-bg.webp") no-repeat;
-    background-size: cover;
-}
-
-#part-1 .right-part-1 h2 {
-    font-size: 34px;
-    line-height: 50px;
-    margin-top: 0;
-    color: #f26f21;
-    font-weight: bold;
-}
-
-#part-1 .right-part-1 h2 span {
-    font-weight: 300;
-    font-size: 34px;
-    line-height: 50px;
-    margin-top: 0;
-    color: #f26f21;
+#part-1 {
+    height: 100px;
 }
 
 .parallax-1 {
