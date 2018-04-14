@@ -1,0 +1,44 @@
+
+#part-1 {
+    padding: 15px;
+}
+
+.text-gray {
+    color: #585858;
+}
+
+#nav-content ul {
+    margin: 0;
+    padding: 0;
+}
+
+.lastest-news {
+    border-right: 1px solid #ccc;
+}
+
+.news {
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.news:first-child {
+    padding-top: 0;
+}
+
+.news:last-child {
+    border: none;
+}
+
+.news-part {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.news-part .heading {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #f37020;
+}
