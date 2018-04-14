@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CumarGold</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/back-to-top.css">
     <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
@@ -28,14 +29,25 @@
     <div class="container-fluid" id="wrap-body">
         <!-- Top Navbar -->
         <div id="top-navbar">
-            <img src="./images/logo.webp" alt="" class="img-responsive">
-            <img src="./images/dathang.webp" alt="" class="img-responsive" style="float: right">
+            <a href="" class="top-navbar">
+                <img src="./images/logo.webp" alt="" class="img-responsive" height="51" width="250">
+            </a>
+            <a href="">
+                <img src="./images/dathang.webp" alt="" class="img-responsive hidden-sm">
+            </a>
         </div>
+
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-md sticky-top" id="navbar">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                <span class="navbar-toggler-icon"></span>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" id="btn-toggler">
+                <i class="fas fa-compress"></i>
             </button>
-            <div class="navbar-collapse collapse" id="collapsingNavbar">
+
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Trang chủ</a>
@@ -99,57 +111,55 @@
                 </ul>
             </div>
         </nav>
-
         <!-- Banner slide -->
         <div id="wrap-banner-slide">
-
             <div class="pos-relative">
                 <div class="banner-content">
-                    <h1>CLICK ĐỂ
+                    <h1 class="w3-animate-top">CLICK ĐỂ
                         <br />MUA NGAY</h1>
-                    <p>Chỉ 270.000đ / hộp</p>
-                    <a href="" class="btn border-white">Mua Ngay</a>
+                    <p class="w3-animate-opacity">Chỉ 270.000đ / hộp</p>
+                    <a href="" class="btn border-white w3-animate-bottom">Mua Ngay</a>
                 </div>
                 <div class="banner-img">
                     <img src="./images/cumargold.webp" alt="" width="40%" class="img-responsive">
                 </div>
-                <img src="http://via.placeholder.com/1360x440" alt="" width="100%" class="img-responsive">
+                <img src="http://via.placeholder.com/1360x600" alt="" width="100%" class="img-responsive">
             </div>
             <div class="pos-relative">
                 <div class="banner-content">
-                    <h1>CLICK ĐỂ
+                    <h1 class="w3-animate-top">CLICK ĐỂ
                         <br />MUA NGAY</h1>
-                    <p>Chỉ 270.000đ / hộp</p>
-                    <a href="" class="btn border-white">Mua Ngay</a>
+                    <p class="w3-animate-opacity">Chỉ 270.000đ / hộp</p>
+                    <a href="" class="btn border-white w3-animate-bottom">Mua Ngay</a>
                 </div>
                 <div class="banner-img">
                     <img src="./images/cumargold.webp" alt="" width="40%" class="img-responsive">
                 </div>
-                <img src="http://via.placeholder.com/1360x440" alt="" width="100%" class="img-responsive">
+                <img src="http://via.placeholder.com/1360x600" alt="" width="100%" class="img-responsive">
             </div>
             <div class="pos-relative">
                 <div class="banner-content">
-                    <h1>CLICK ĐỂ
+                    <h1 class="w3-animate-top">CLICK ĐỂ
                         <br />MUA NGAY</h1>
-                    <p>Chỉ 270.000đ / hộp</p>
-                    <a href="" class="btn border-white">Mua Ngay</a>
+                    <p class="w3-animate-opacity">Chỉ 270.000đ / hộp</p>
+                    <a href="" class="btn border-white w3-animate-bottom">Mua Ngay</a>
                 </div>
                 <div class="banner-img">
                     <img src="./images/cumargold.webp" alt="" width="40%" class="img-responsive">
                 </div>
-                <img src="http://via.placeholder.com/1360x440" alt="" width="100%" class="img-responsive">
+                <img src="http://via.placeholder.com/1360x600" alt="" width="100%" class="img-responsive">
             </div>
             <div class="pos-relative">
                 <div class="banner-content">
-                    <h1>CLICK ĐỂ
+                    <h1 class="w3-animate-top">CLICK ĐỂ
                         <br />MUA NGAY</h1>
-                    <p>Chỉ 270.000đ / hộp</p>
-                    <a href="" class="btn border-white">Mua Ngay</a>
+                    <p class="w3-animate-opacity">Chỉ 270.000đ / hộp</p>
+                    <a href="" class="btn border-white w3-animate-bottom">Mua Ngay</a>
                 </div>
                 <div class="banner-img">
                     <img src="./images/cumargold.webp" alt="" width="40%" class="img-responsive">
                 </div>
-                <img src="http://via.placeholder.com/1360x440" alt="" width="100%" class="img-responsive">
+                <img src="http://via.placeholder.com/1360x600" alt="" width="100%" class="img-responsive">
             </div>
         </div>
 
@@ -177,7 +187,7 @@
 
         <!-- About -->
         <div id="wrap-about">
-            <h5 class="cumar_h2 center">Tinh Nghệ Nano đầu tiên tại Việt Nam</h5>
+            <h5 class="page_h2 center">Tinh Nghệ Nano đầu tiên tại Việt Nam</h5>
             <div class="row">
                 <div class="col-md-4 about-div">
                     <div class="about-div-content">
@@ -241,7 +251,7 @@
 
         <!-- Recommend -->
 
-        <p class="text-bold center cumar_home_midrow">
+        <p class="text-bold center home_midrow">
             Ai nên sử dụng CumarGold?
         </p>
         <div id="wrap-recommend">
@@ -277,32 +287,32 @@
         <!-- Statistical -->
         <div id="wrap-statistical">
             <div class="row">
-                <div class="col-md-2 statistical-div center">
+                <div class="col-sm-2 statistical-div center">
                     <i class="fas fa-star statistical-icon"></i>
                     <p class="count">1</p>
                     <p>Tinh nghệ Nano Đầu tiên tại Việt Nam</p>
                 </div>
-                <div class="col-md-2 statistical-div center">
+                <div class="col-sm-2 statistical-div center">
                     <i class="fab fa-react statistical-icon"></i>
                     <p class="count">12</p>
                     <p>Top 10 sự kiện KHCNViệt Nam năm 2013</p>
                 </div>
-                <div class="col-md-2 statistical-div center">
+                <div class="col-sm-2 statistical-div center">
                     <i class="far fa-thumbs-up statistical-icon"></i>
                     <p class="count">89231</p>
                     <p>Người bị viêm loét dạ dày, ung bướu, phụ nữ sau sinh sử</p>
                 </div>
-                <div class="col-md-2 statistical-div center">
+                <div class="col-sm-2 statistical-div center">
                     <i class="fas fa-map-marker-alt statistical-icon"></i>
                     <p class="count">7590</p>
                     <p>Nhà thuốc tin tưởng & tư vấn sử dụng</p>
                 </div>
-                <div class="col-md-2 statistical-div center">
+                <div class="col-sm-2 statistical-div center">
                     <i class="far fa-star statistical-icon"></i>
                     <p class="count">15</p>
                     <p>Thương hiệu Việt Namtin dùng 2014-2016</p>
                 </div>
-                <div class="col-md-2 statistical-div center">
+                <div class="col-sm-2 statistical-div center">
                     <i class="far fa-newspaper statistical-icon"></i>
                     <p class="count">259</p>
                     <p>Bài viết của các báo trong và ngoài nước đưa tin về </p>
@@ -312,7 +322,7 @@
 
         <!-- Custom Feeling -->
         <div id="wrap-custom-feeling">
-            <h5 class="cumar_h2 center">Cảm nhận của khách hàng</h5>
+            <h5 class="page_h2 center">Cảm nhận của khách hàng</h5>
             <div class="custom-feeling-slide">
                 <div class="custom-feeling-div">
                     <div class="row">
@@ -530,7 +540,9 @@
                 </div>
                 <!-- Connect -->
                 <div class="col-md-4">
-                    <h5>Kết nối với chúng tôi:</h5>
+                    <p style="font-size: 16px;color: #fff">
+                        <b>Kết nối với chúng tôi:</b>
+                    </p>
                     <div id="include-plugin-facebook-fanpage">
                         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDoanKhoaCNTT.DHNT%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                             width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -541,8 +553,8 @@
 
         <!-- Footer -->
         <div id="wrap-footer">
-            <div class="row">
-                <div class="col-md-8">
+            <div class="row wrap-flex-align-center">
+                <div class="col-md-3">
                     <div class="social-network">
                         <ul>
                             <li>
@@ -562,12 +574,16 @@
                             </li>
                         </ul>
                     </div>
-                    <img src="./images/dathongbao.png" alt="" width="30%" class="img-responsive">
+                    <img src="./images/dathongbao.png" alt="" width="100%" class="img-responsive">
+                </div>
+                <div class="col-md-6">
                     <p>© 2016 - Bản Quyền thuộc Công Ty Cổ Phần Dược Mỹ Phẩm CVI</p>
                     <p> Thửa đất số 24, Lô 06 khu 4.1CC tuyến phố Láng Hạ - Thanh Xuân, p.Nhân Chính, q.Thanh Xuân, Hà Nội. (ngõ
                         81 đường Lê Văn Lương, đi thẳng vào khoảng 100m)</p>
                     <p>Điện thoạị: 04.3668.6938</p>
                     <p>GPKD số 0105440255 do sở KH &amp; ĐT TP Hà Nội cấp ngày 05/08/2011</p>
+                </div>
+                <div class="col-md-3">
                     <p>
                         <b>QUY CHẾ HOẠT ĐỘNG </b>
                     </p>
@@ -587,6 +603,7 @@
                         <a href="">Hướng dẫn mua hàng, thanh toán</a>
                     </p>
                 </div>
+
                 <ul>
                     Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh
                     <br> (*) Hiệu quả có thể khác nhau tùy thuộc vào cơ địa từng người

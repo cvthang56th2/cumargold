@@ -8,6 +8,11 @@
 	padding: 10px 20px;
 }
 
+.w3-animate-top, .w3-animate-bottom, .w3-animate-opacity {
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #f37021;
@@ -43,7 +48,7 @@ h1, h2, h3,h4, h5, h6 {
 	color: #585858;
 }
 
-.cumar_h2 {
+.page_h2 {
     color: #f37021;
     font-family: 'Open Sans',sans-serif;
 	font-weight: bold;
@@ -52,6 +57,7 @@ h1, h2, h3,h4, h5, h6 {
 }
 
 body {
+	min-width: 320px;
     font-size: 14px;
     font-family: 'Roboto',sans-serif;
     line-height: 20px;
@@ -63,6 +69,9 @@ body {
 
 #top-navbar {
 	padding: 3%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 #navbar {
@@ -100,7 +109,7 @@ body {
 }
 
 #navbar .navbar-nav li .dropdown-menu {
-	margin-top: 20px;
+	
 	padding: 25px 20px;
 }
 
@@ -172,6 +181,10 @@ a:hover {
 	padding: 0 8%;
 }
 
+#wrap-introduce .col-md-6 {
+	margin-bottom: 10px;
+}
+
 #wrap-introduce h4 {
 	font-family: 'Open Sans', sans-serif;
     font-size: 15px;
@@ -239,7 +252,7 @@ a:hover {
 	padding: 0 15%;
 }
 
-.cumar_home_midrow {
+.home_midrow {
     height: 50px;
     line-height: 50px;
     font-weight: bold;
@@ -375,8 +388,14 @@ a:hover {
 	position: relative;
 }
 
+#wrap-banner-slide {
+}
+
 .banner-content {
-	position: absolute; top: 50%; left: 20%; transform: translate(-50%, -50%);
+	position: absolute; 
+	top: 50%; 
+	left: 30%; 
+	transform: translate(-50%, -50%);
 }
 
 .banner-content h1 {
@@ -470,4 +489,41 @@ a:hover {
 .btn-gray {
     background: #ccc;
     color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+	.hidden-sm {
+		display: none;
+	}
+	
+}
+
+@media only screen and (max-width: 767px) {
+	.banner-content h1 {
+		font-size: 32px;
+	}
+	.banner-content p {
+		font-size: 16px;
+	}
+
+	.btn {
+		padding: 5px 20px;
+		font-size: 12px;
+		min-width: 0;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.banner-content h1 {
+		font-size: 25px;
+	}
+	.banner-content p {
+		font-size: 13px;
+	}
+
+	.btn {
+		padding: 5px 20px;
+		font-size: 12px;
+		min-width: 0;
+	}
 }
