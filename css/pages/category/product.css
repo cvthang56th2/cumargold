@@ -49,3 +49,15 @@
 #expert-opinions {
     cursor: pointer;
 }
+
+.heading-1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: #f37021;
+}
+
+.list-sub-heading li {
+    color: #ff8c00;
+    font-size: 14px;
+    margin: 10px 0;
+}
