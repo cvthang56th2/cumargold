@@ -201,6 +201,10 @@ a:hover {
 	padding-top: 30px;
 }
 
+.about-div {
+	margin-top: 20px;
+}
+
 .about-div-content {
 	background-color: #fff;
 	padding: 10px;
@@ -360,6 +364,10 @@ a:hover {
 	color: #fff;
 }
 
+.news {
+	margin-bottom: 10px;
+}
+
 .news-title {
 	font-weight: 700;
 }
@@ -491,9 +499,30 @@ a:hover {
     color: #fff;
 }
 
+.col-sm-4, .col-xs-4 {
+	width: 33.3%;
+}
+
+.col-xs-8 {
+	width: 66.6%
+}
+
+.col-xs-6 {
+	width: 50%;
+}
+
+
 @media only screen and (max-width: 768px) {
 	.hidden-sm {
 		display: none;
+	}
+
+	#wrap-footer {
+		text-align: center;
+	}
+
+	#wrap-footer img {
+		width: 200px;
 	}
 	
 }
