@@ -84,6 +84,7 @@ ul li {
 .lisgr {
     width: 45%;
     margin: 0 25%;
+    margin: auto !important;
 }
 
 .lisgr ul {
@@ -104,11 +105,7 @@ ul li {
 }
 
 .grwr {
-    border: 1px solid #fff;
-    padding: 10px;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
+    text-transform: uppercase;
 }
 
 .imgbann {
@@ -216,27 +213,6 @@ div.form-booking {
     height: 500px;
     padding-bottom: 100px;
 }
-#part-1 {
-    height: 100px;
-}
-
-.parallax-1 {
-    background-image: url("http://via.placeholder.com/300x300");
-    min-height: 660px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.parallax-2 {
-    background-image: url("http://via.placeholder.com/400x400");
-    min-height: 370px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .containersub {
     margin: 0 auto;
@@ -268,102 +244,6 @@ div.form-booking {
     background: url(https://cumargold.vn/landing/img/xicon5.png.pagespeed.ic.LEJiuhCp7_.webp) no-repeat;
 }
 
-#part-2 .loggor img.logore {
-    float: left;
-    margin-right: 40px;
-}
-
-#part-2 .loggor h2 {
-    text-align: center;
-    font-size: 30px;
-    line-height: 40px;
-    color: #f37920;
-    float: left;
-    margin: 5px 0 30px;
-    font-weight: bold;
-}
-
-#part-2 .cotn {
-    max-width: 55%;
-    background: #fff;
-    padding: 10px 20px;
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    margin: 0 auto;
-    margin-top: 40px;
-    text-align: center;
-    color: #f37920;
-}
-
-#part-3 {
-    padding-left: 5%;
-    padding-right: 5%;
-    text-align: center;
-    background: #f6921e;
-    color: #fff;
-}
-
-#part-3 p {
-    margin-bottom: 0;
-}
-
-#part-3 .part-3-img {
-    margin-bottom: 20px;
-}
-
-#part-5 {
-    padding-top: 0;
-}
-
-.part-5-head {
-    text-align: center;
-}
-
-.part-5-head span {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ec1c24;
-    margin-left: 10%;
-    display: inline-block;
-}
-
-.part-5-content {
-    text-align: center;
-    color: #4d4d4f;
-    font-weight: bold;
-}
-
-.part-5-content p {
-    margin-top: 14px;
-    margin-bottom: 20px;
-}
-
-.part-5-content .row {
-    padding-top: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 !important;
-}
-
-.part-5-content .row .part-5-content-div {
-    width: 17%;
-}
-
-
-#part-6 {
-    background: #aac2d0;
-    padding: 50px;
-}
-
-#part-6 h2 {
-    color: #ef4e23;
-    margin-bottom: 80px;
-    line-height: 50px;
-    font-weight: bold;
-}
 
 .center {
     text-align: center;
@@ -380,119 +260,6 @@ div.form-booking {
     font-size: 30px;
 }
 
-#part-7 {
-    padding: 4%;
-}
-
-#part-7 .center {
-    margin-bottom: 30px;
-}
-
-#part-7 .kl {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-#part-7 h5 {
-    margin-top: 0;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-#part-8 .center {
-    margin-bottom: 30px;
-}
-
-#part-8 h4 {
-    font-weight: bold;
-    font-size: 14px;
-    margin: 18px 0;
-}
-
-#part-8 .col-md-9 a {
-    display: inline-block;
-    border: 1px solid #ccc;
-    padding: 5px 20px;
-    text-decoration: none;
-    color: #333;
-    border-radius: 5px;
-}
-
-#part-8 ul li {
-    padding-top: 5px;
-    margin-bottom: 30px;
-}
-
-.listvideo {
-    background: #f48120;
-    padding: 10px;
-    margin: 0 -10px;
-    color: #fff;
-    width: 95%;
-}
-
-.bordered-white {
-    border: 1px solid #fff;
-}
-
-#part-9 .center {
-    margin-bottom: 30px;
-}
-
-#part-9 h4 {
-    color: #f26e21;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 30px;
-    margin: 20px 0;
-}
-
-#part-10 {
-    background: #de771c;
-    color: #fff;
-}
-
-#part-10 .col-md-3 {
-    text-align: center;
-}
-
-#part-10 .col-md-3 p {
-    margin-top: 14px;
-    margin-bottom: 0;
-    font-weight: bold;
-}
-
-.goldgra {
-    width: 85%;
-    background: #ea841a;
-    padding: 20px;
-    color: #fff;
-}
-
-.hg1 {
-    border-bottom: 2px solid #fff;
-    padding-bottom: 20px;
-}
-
-.goff {
-    padding: 10px 0 0;
-    border-top: 1px solid #fff;
-    margin-top: 10px;
-}
-
-.margin-top-160 {
-    margin-top: 160px;
-}
-
-#part-11 {
-    background: #fbae17;
-}
-
-#part-11 h2 {
-    font-size: 35px;
-    color: #fff;
-    font-weight: bold;
-}
 
 #wrap-footer {
     height: 50px;
@@ -502,13 +269,6 @@ div.form-booking {
     align-items: center;
 }
 
-.part-9-wrap-img {
-    position: relative;
-}
-
-.part-9-wrap-img img {
-    position: absolute;
-    top: 0px;
-    left: -200px;
-    max-width: 450px;
+#part-1 {
+    padding: 0 5%;
 }
