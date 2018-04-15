@@ -357,11 +357,15 @@ a:hover {
 }
 
 #wrap-booking {
-	margin-bottom: 10px;
+	margin: 20px 0;
 }
 
-#wrap-news a {
+.text-white {
 	color: #fff;
+}
+
+.news a {
+	color: #585858 ;
 }
 
 .news {
@@ -512,6 +516,70 @@ a:hover {
 	width: 50%;
 }
 
+.page-item:first-child .page-link {
+	border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.pagination {
+	margin: 20px 0;
+}
+
+.pagination li.active a, .pagination a:hover, .pagination a:focus {
+    color: #fff !important;
+    background: #f37021 !important;
+    border-color: #f37021 !important;
+}
+
+.pagination a:focus {
+	outline: none;
+}
+
+.pagination li a {
+	padding: 4px 9px;
+	font-weight: 700;
+    border-radius: 50%;
+    border: 1px solid #f3f3f3;
+    color: #9f9f9f;
+	transition: .3s all ease;
+	font-size: 12px;
+}
+
+.pagination li+li {
+    margin-left: 10px;
+}
+
+.pagination li.page-next a {
+    padding: 4px 10px;
+	font-weight: 100;
+	color: #fff;
+    background: #f37021;
+	border-color: #f37021;
+	border-radius: 50px;
+}
+
+.bg-title {
+	background: #f37021;
+}
+
+.new_box_left_title {
+    padding-left: 10px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 35px;
+}
+
+.product-intro {
+	margin: 20px 0;
+}
+
+.product-intro p {
+	box-sizing: border-box; 
+	margin: 0px; 
+	font-size: 14px; 
+	text-align: justify; 
+	color: rgb(51, 51, 51) !important;
+}
 
 @media only screen and (max-width: 768px) {
 	.hidden-sm {
@@ -525,7 +593,15 @@ a:hover {
 	#wrap-footer img {
 		width: 200px;
 	}
-	
+	.main-content {
+		display: block;
+	}
+	.left-content {
+		width: 100%;
+	}
+	.right-content{
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 767px) {

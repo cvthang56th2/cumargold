@@ -1,6 +1,6 @@
 
 #part-1 {
-    padding: 15px;
+    padding: 15px 0;
 }
 
 .text-gray {
@@ -50,4 +50,17 @@
 .list-news .news {
     border-bottom: none;
     margin-top: 20px;
+}
+
+.news-description .news-title {
+    margin-bottom: 10px; font-size: 25px; line-height: 30px;
+    font-weight: 400;
+}
+
+.datePublished-interactionCount {
+    margin-bottom: 10px;  color: gray; font-size: 11px;
+}
+
+.wrap-news-detail img {
+    margin: 20px 0;
 }
