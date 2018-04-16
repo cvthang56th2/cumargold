@@ -668,6 +668,10 @@ a:hover {
 	}
 }
 
+.hide {
+	display: none;
+}
+
 @media only screen and (max-width: 767px) {
 	.banner-content h1 {
 		font-size: 32px;

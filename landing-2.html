@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTV | Huyết Thanh Mụn HTV</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/landing-2.css">
     <link rel="stylesheet" href="./css/back-to-top.css">
     <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
@@ -25,20 +26,20 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">
+    <div class="container-fluid" id="wrap-body">
+        <div id="top-navbar">
+            <div class="logo">
                 <a href="/">
-                    <img src="./images/htv-logo-white.png" alt="HTV huyết thanh đặc trị mụn hàng đầu tại việt nam" class="img-responsive">
+                    <img src="./images/htv-logo-white.png" alt="HTV huyết thanh đặc trị mụn hàng đầu tại việt nam" class="img-responsive" width="100%">
                 </a>
-            </h1>
+            </div>
+
             <div class="textlogo">
-                <h3>HUYẾT THANH MỤN HTV HỖ TRỢ HẾT SẠCH MỤN, LÀM LÀNH VẾT THÂM.</h3>
+                <h3>HTV Huyết Thanh đặc trị mụn hàng đầu tại Việt Nam</h3>
+                <p>SẢN XUẤT THEO DÂY CHUYỀN CÔNG NGHỆ HIỆN ĐẠI KHÉP KÍN</p>
             </div>
         </div>
-    </header>
 
-    <div class="container-fluid" id="wrap-body">
         <!-- banner -->
         <div id="banner" class="part">
             <div class="container">
@@ -258,22 +259,22 @@
         <div id="part-6">
             <h2>QUY TRÌNH MUA HÀNG CỰC KÌ ĐƠN GIẢN</h2>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-xs-6 col-md-3">
                     <img src="./images/part-10-1.webp" alt="" class="img-responsive rounded-circle" />
                     <p>Bạn đặt mua
                         <br />sản phẩm trên Website</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xs-6 col-md-3">
                     <img src="./images/part-10-2.webp" alt="" class="img-responsive rounded-circle" />
                     <p>Chúng tôi
                         <br />liên lạc với bạn</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xs-6 col-md-3">
                     <img src="./images/part-10-3.webp" alt="" class="img-responsive rounded-circle" />
                     <p>Chúng tôi
                         <br />gửi hàng cho bạn</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xs-6 col-md-3">
                     <img src="./images/part-10-4.webp" alt="" class="img-responsive rounded-circle" />
                     <p>Bạn thanh toán
                         <br />khi nhận hàng</p>
@@ -285,9 +286,7 @@
         <div id="part-7" class="part">
             <div class="container">
                 <h2>HUYẾT THANH CHĂM SÓC DA MỤN AN TOÀN HTV</h2>
-                <h3>
-                    <img src="./images/uudai.png" class="img-responsive" />
-                </h3>
+                <img src="./images/uudai.png" class="img-responsive" width="80%" />
                 <div class="row">
                     <div class="col-md-5">
                         <img src="./images/matmun.png" class="img-responsive" width="100%" />
@@ -434,9 +433,44 @@
         </footer>
     </div>
 
+    <button id="button-responsive-form-booking">
+        Đặt hàng
+    </button>
+
+    <div class="form-booking" id="responsive-form-booking">
+        <div class="formhead">
+            <img src="./images/htv-logo-white.png" alt="" class="img-responsive" width="100%">
+        </div>
+        <div class="formct">
+            <form method="post" id="form1" novalidate="novalidate">
+                <div class="center">Vui lòng để lại thông tin khách hàng</div>
+                <div class="frinput">
+                    <input type="phone" id="phone1" name="phone" placeholder="Số điện thoại">
+                </div>
+                <div class="frinput">
+                    <input type="text" id="name1" name="name" placeholder="Tên của bạn">
+                </div>
+                <div class="frinput">
+                    <input type="number" id="sohop1" name="sohop" placeholder="Số hộp cần mua">
+                </div>
+                <div class="right">
+                    <div>Giá sản phẩm:
+                        <strong>169.000 VND/ hộp</strong>
+                    </div>
+                    <div>
+                        <span>* Freeship</span>
+                    </div>
+                </div>
+                <button type="submit" class="btnform">ĐẶT HÀNG NGAY</button>
+            </form>
+        </div>
+    </div>
+
+
     <a href="#content" class="back-to-top">
         <span class="back-to-top-text">Top</span>
     </a>
+    <script src="./js/landing-2.js"></script>
     <script src="./js/scripts.js"></script>
 </body>
 

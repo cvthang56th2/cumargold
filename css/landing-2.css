@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     font-weight: 400;
+    min-width: 425px;
 }
 
 .container-fluid {
@@ -44,29 +45,30 @@ ul li {
     position: relative;
 }
 
-.header {
+
+#top-navbar {
     background-color: #e7731f;
 }
 
-.header .container {
-    margin: auto;
-    max-width: 90%;
-    display: flex;
-    padding: 30px 0;
-    align-items: center;
+#top-navbar {
+    padding: 20px 3%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.header .logo {
+#top-navbar .logo {
     width: 35%;
 }
 
-.header .textlogo {
+#top-navbar .textlogo {
     width: 65%;
     color: #fff;
-    float: left;
 }
 
 .textlogo h3 {
+    color: #fff;
     margin: 0;
     font-weight: bold;
     font-size: 30px;
@@ -76,6 +78,11 @@ ul li {
     font-size: 13px;
     margin-bottom: 0;
 }
+
+.textlogo p {
+    margin-bottom: 0;
+}
+
 
 .textlogo p {
     margin-bottom: 0;
@@ -286,7 +293,7 @@ div.form-booking {
 }
 
 #part-1 .ttie {
-    width: 450px;
+    width: 80%;
     margin: 0 auto;
     background: #f05a22;
     color: #fff;
@@ -312,6 +319,7 @@ div.form-booking {
 }
 
 #part-1 .tioli {
+    font-weight: bold;
     width: 40%;
     margin-top: 30px;
 }
@@ -340,6 +348,7 @@ div.form-booking {
 
 #part-1 img.dgo {
     position: absolute;
+    z-index: -1;
     left: 42%;
     top: 200px;
     width: 300px;
@@ -382,7 +391,7 @@ div.form-booking {
 .part-5-head h2 {
     font-size: 30px;
     font-weight: bold;
-    color: #ec1c24;
+    color: #fff;
     display: inline-block;
     margin: 0 0 40px;
 }
@@ -410,6 +419,7 @@ div.form-booking {
 
 .part-5-content .row .part-5-content-div {
     width: 24%;
+    color: #fff;
 }
 
 
@@ -425,10 +435,13 @@ div.form-booking {
 #part-6 h2 {
     margin-bottom: 30px;
     text-align: center;
+    color: #fff;
+    font-weight: 700;
 }
 
 #part-6 .col-md-3 {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 #part-6 .col-md-3 img {
@@ -449,6 +462,7 @@ div.form-booking {
 }
 
 .goldg h4 {
+    color: #fff;
     margin-top: 10px;
 }
 
@@ -484,4 +498,119 @@ div.form-booking {
 #part-8 {
     padding: 45px 5%;
     background-color: #f26f26;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    #part-1 .tioli {
+        width: 100%;
+        margin: auto;
+    }
+    #part-1 img.dgo {
+        left: 0;
+    }
+
+    #top-navbar {
+        display: block;
+    }
+
+    #top-navbar .logo  {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #top-navbar .logo img {
+        width: 40%;
+    }
+
+    #top-navbar .textlogo {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .textlogo h3 {
+        font-size: 20px;
+    }
+
+	.textlogo p {
+        font-size: 10px;
+    }
+    
+    .lisgr {
+        width: 80%;
+    }
+
+    .form-booking {
+        display: none;
+    }
+
+    #button-responsive-form-booking {
+        display: block !important;
+    }
+    #part-2 .loggor img.logore {
+        margin: 0;
+        float: unset;
+    }
+    #part-2 .loggor h2 {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .part-5-head span {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    .part-5-content p {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    #part-3 {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    #part-3 .row .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    #part-6 .part .col-md-4, #part-6 .part .col-md-4 img {
+        width: 100% !important;
+    }
+
+    #part-6 .part .col-md-8, #part-6 .part .col-md-8 img {
+        width: 100% !important;
+    }
+
+    #part-7 h2 {
+        font-size: 25px;
+    }
+    
+}
+
+#button-responsive-form-booking {
+    display: none;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #f05a22;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+#responsive-form-booking {
+    display: none;
+    position: fixed;
+    top: 3%;
+}
+
+#button-responsive-form-booking:focus {
+    background-color: rgb(71, 216, 114);
+    outline: none;
 }

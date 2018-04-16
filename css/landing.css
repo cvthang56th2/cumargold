@@ -615,7 +615,10 @@ div.form-booking {
     #part-6 .part .col-md-8, #part-6 .part .col-md-8 img {
         width: 100% !important;
     }
-    
+
+    #part-11 h2 {
+        font-size: 25px;
+    }
 }
 
 #button-responsive-form-booking {
@@ -629,6 +632,7 @@ div.form-booking {
     padding: 5px 20px;
     border-radius: 50px;
     font-weight: 700;
+    z-index: 1;
 }
 
 #responsive-form-booking {
