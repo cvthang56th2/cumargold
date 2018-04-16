@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     font-weight: 400;
+    min-width: 425px;
 }
 
 .container-fluid {
@@ -44,29 +45,29 @@ ul li {
     position: relative;
 }
 
-.header {
+#top-navbar {
     background-color: #e7731f;
 }
 
-.header .container {
-    margin: auto;
-    max-width: 90%;
-    display: flex;
-    padding: 30px 0;
-    align-items: center;
+#top-navbar {
+    padding: 20px 3%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.header .logo {
+#top-navbar .logo {
     width: 35%;
 }
 
-.header .textlogo {
+#top-navbar .textlogo {
     width: 65%;
     color: #fff;
-    float: left;
 }
 
 .textlogo h3 {
+    color: #fff;
     margin: 0;
     font-weight: bold;
     font-size: 30px;
@@ -82,7 +83,7 @@ ul li {
 }
 
 .lisgr {
-    width: 30%;
+    width: 40%;
 }
 
 .lisgr ul {
@@ -324,9 +325,19 @@ div.form-booking {
     background: url(https://cumargold.vn/landing/img/xicon5.png.pagespeed.ic.LEJiuhCp7_.webp) no-repeat;
 }
 
+#part-2 .loggor {
+    text-align: center;
+}
+
 #part-2 .loggor img.logore {
-    float: left;
     margin-right: 40px;
+    float: left;    
+}
+
+#part-2 .loggor div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #part-2 .loggor h2 {
@@ -334,7 +345,6 @@ div.form-booking {
     font-size: 30px;
     line-height: 40px;
     color: #f37920;
-    float: left;
     margin: 5px 0 30px;
     font-weight: bold;
 }
@@ -457,6 +467,10 @@ div.form-booking {
     margin: 20px 0;
 }
 
+#part-9 .title {
+    line-height: 45px;
+}
+
 #part-10 {
     background: #de771c;
     color: #fff;
@@ -480,6 +494,7 @@ div.form-booking {
 }
 
 .goldg h4 {
+    color: #fff;
     margin-top: 10px;
 }
 
@@ -525,4 +540,104 @@ div.form-booking {
     top: 0px;
     left: -200px;
     max-width: 450px;
+}
+
+@media only screen and (max-width: 767px) {
+    #top-navbar {
+        display: block;
+    }
+
+    #top-navbar .logo  {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #top-navbar .logo img {
+        width: 40%;
+    }
+
+    #top-navbar .textlogo {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .textlogo h3 {
+        font-size: 20px;
+    }
+
+	.textlogo p {
+        font-size: 10px;
+    }
+    
+    .lisgr {
+        width: 80%;
+    }
+
+    .form-booking {
+        display: none;
+    }
+
+    #button-responsive-form-booking {
+        display: block !important;
+    }
+    #part-2 .loggor img.logore {
+        margin: 0;
+        float: unset;
+    }
+    #part-2 .loggor h2 {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .part-5-head span {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    .part-5-content p {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    #part-3 {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    #part-3 .row .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    #part-6 .part .col-md-4, #part-6 .part .col-md-4 img {
+        width: 100% !important;
+    }
+
+    #part-6 .part .col-md-8, #part-6 .part .col-md-8 img {
+        width: 100% !important;
+    }
+    
+}
+
+#button-responsive-form-booking {
+    display: none;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #f05a22;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+#responsive-form-booking {
+    display: none;
+    position: fixed;
+    top: 3%;
+}
+
+#button-responsive-form-booking:focus {
+    background-color: rgb(71, 216, 114);
+    outline: none;
 }

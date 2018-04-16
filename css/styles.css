@@ -9,7 +9,7 @@
 }
 
 .w3-animate-top, .w3-animate-bottom, .w3-animate-opacity {
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 	animation-timing-function: ease-in;
 }
 
@@ -46,6 +46,10 @@
 
 h1, h2, h3,h4, h5, h6 {
 	color: #585858;
+}
+
+a {
+	transition: .3s all ease;
 }
 
 .page_h2 {
@@ -105,12 +109,22 @@ body {
 	color: #f37021;
 }
 
-#navbar .navbar-nav li:hover .dropdown-menu {
+#navbar .navbar-nav li:hover .dropdown-menu {	
 	display: block;
+	animation: opac 0.4s;
+}
+
+#navbar .dropdown-menu a:hover::before{
+	animation: opac 0.8s;
+	content: "• ";
+}
+
+#navbar .dropdown-menu a:hover {
+	color: #f37021 !important;
+	animation: opac 0.8s;
 }
 
 #navbar .navbar-nav li .dropdown-menu {
-	
 	padding: 25px 20px;
 }
 
@@ -144,6 +158,14 @@ a:hover {
 
 #navbar .navbar-nav .nav-item:first-child a {
 	padding-left: 0;
+}
+
+#btn-toggler {
+    border: 1px solid #585858;
+}
+
+#btn-toggler:focus {
+	outline: none;
 }
 
 #search_form {
@@ -361,6 +383,14 @@ a:hover {
 	margin: 20px 0;
 }
 
+#wrap-booking .btn {
+	background-color: #f37021 !important;
+	color: #fff;
+}
+
+#wrap-booking .btn:hover {
+	background-color: #18ce79 !important;
+}
 .text-white {
 	color: #fff;
 }
@@ -489,6 +519,29 @@ a:hover {
 	width: 33.3%;	
 }
 
+.right-content h5 {
+	padding-left: 10px;
+    font-size: 20px;
+    color: #fff;
+	line-height: 35px;
+	background: #f37021;
+	font-weight: 700;
+	width: 100%;
+}
+
+.right-content .btn {
+	background-color: #f37021 !important;
+	color: #fff;
+}
+
+.right-content .btn:hover {
+	background-color: #18ce79 !important;
+}
+
+.right-content a {
+	font-weight: 700;
+	color: #585858;
+}
 
 .wrap-flex-center {
     display: flex;
@@ -604,6 +657,8 @@ a:hover {
 	}
 	.main-content {
 		display: block;
+		width: 90%;
+		margin: auto;
 	}
 	.left-content {
 		width: 100%;
@@ -626,6 +681,16 @@ a:hover {
 		font-size: 12px;
 		min-width: 0;
 	}
+
+	#top-navbar {
+		padding: 20px 3%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	
 }
 
 @media only screen and (max-width: 375px) {
