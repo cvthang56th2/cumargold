@@ -95,4 +95,21 @@ $(document).ready(function () {
         $('#btn-toggler svg').addClass('fa-minus');
     })
 
+    $('#wrap-adv').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
 })

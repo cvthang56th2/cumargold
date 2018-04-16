@@ -68,10 +68,11 @@ body {
 }
 
 #top-navbar {
-	padding: 3%;
+	padding: 20px 3%;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 #navbar {
@@ -581,9 +582,17 @@ a:hover {
 	color: rgb(51, 51, 51) !important;
 }
 
+.show-sm {
+	display: none;
+}
+
 @media only screen and (max-width: 768px) {
 	.hidden-sm {
 		display: none;
+	}
+
+	.show-sm {
+		display: block;
 	}
 
 	#wrap-footer {
