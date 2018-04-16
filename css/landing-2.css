@@ -463,10 +463,6 @@ div.form-booking {
     margin-top: 10px;
 }
 
-.margin-top-160 {
-    margin-top: 160px;
-}
-
 #part-7 {
     background: #e8eaf2;
 }
@@ -479,6 +475,10 @@ div.form-booking {
 
 #part-7 .bottom-nav {
     margin-top: 70px;
+}
+
+#part-7 .form-booking {
+    margin-top: 50px;
 }
 
 #part-8 {
