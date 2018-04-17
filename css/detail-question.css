@@ -49,3 +49,54 @@
 #expert-opinions {
     cursor: pointer;
 }
+
+.left-content h1 {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #f37020;
+}
+
+.qa-form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5%;
+    margin-bottom: 20px;
+}
+
+.qa-form h3 {
+    margin-bottom: 20px;
+}
+
+.question {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.question .col-md-1 {
+    display: block;
+    color: #f37020;
+    font-size: 40px;
+}
+
+.question .title h5 {
+    color: #f37021 !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.question .question-author {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.question h3 {
+    color: #f37021;
+    font-size: 14px;
+    font-weight: 700;
+}
