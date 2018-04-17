@@ -461,6 +461,17 @@ a:hover {
 	color: rgb(65, 59, 59);
 }
 
+.background-primary {
+	background-color: #f37021;
+	color: #fff;
+}
+
+
+.background-primary-focus {
+	background-color: #18ce79;
+	color: #fff;
+}
+
 .banner-img {
 	position: absolute;
 	top: 50%;
@@ -665,6 +676,12 @@ a:hover {
 	}
 	.right-content{
 		width: 100%;
+	}
+
+	#navbar {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-top: 0.5px solid #ccc;
 	}
 }
 

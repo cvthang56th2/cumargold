@@ -86,10 +86,13 @@ $(document).ready(function () {
 
     $('#btn-toggler').click(function () {
         if ($('#btn-toggler').hasClass('collapsed')) {
-
+            $('#btn-toggler').addClass('background-primary-focus');
+            $('#btn-toggler').removeClass('background-primary');
             $('#btn-toggler svg').removeClass('fa-compress');
             $('#btn-toggler svg').addClass('fa-minus');
         } else {
+            $('#btn-toggler').addClass('background-primary');
+            $('#btn-toggler').removeClass('background-primary-focus');
             $('#btn-toggler svg').removeClass('fa-minus');
             $('#btn-toggler svg').addClass('fa-compress');
         }
