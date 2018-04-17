@@ -84,6 +84,7 @@ body {
 }
 
 #navbar {
+	border-top: 1px solid #f3f3f3;	
 	background-color: #fff;
 	padding: 0 3%;
 	display: flex;
@@ -155,7 +156,6 @@ a:hover {
 }
 
 #navbar>div {
-	border-top: 1px solid #f3f3f3;
 	padding: 20px 0;
 	width: 100%;
 }
@@ -685,7 +685,6 @@ a:hover {
 	#navbar {
 		padding-top: 10px;
 		padding-bottom: 10px;
-		border-top: 0.5px solid #ccc;
 	}
 }
 
