@@ -13,7 +13,7 @@ function initMap() {
     },
     {
       name: "Address 3",
-      lat: 16.204695692550057,
+      lat: 16.2046956925200057,
       lng: 105.68964629980474
     },
     {
@@ -116,7 +116,7 @@ function initMap() {
       window.setTimeout(function () {
         map.setZoom(10);
         map.setCenter(addressMarker.getPosition());
-      }, 500)
+      }, 2000)
     })
 
     addressMarker.addListener('click', function () {
@@ -150,7 +150,7 @@ function initMap() {
       window.setTimeout(function () {
         map.setZoom(10);
         map.setCenter(addressMarker.getPosition());
-      }, 500)
+      }, 2000)
 
     })
   })
@@ -176,7 +176,7 @@ function initMap() {
     window.setTimeout(function () {
       map.setZoom(10);
       map.setCenter(addressMarker.getPosition());
-    }, 500)
+    }, 2000)
   })
 
   $('#markerStart').click(function () {
@@ -199,7 +199,7 @@ function initMap() {
     window.setTimeout(function () {
       map.setZoom(10);
       map.setCenter(addressMarker.getPosition());
-    }, 500)
+    }, 2000)
   })
 
 
