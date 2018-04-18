@@ -376,6 +376,10 @@ div.form-booking {
     position: relative;
 }
 
+#part-4 .form-booking, #part-7 .form-booking {
+    width: 100%;
+    position: relative;
+}
 
 #part-5 {
     padding-top: 0;
@@ -490,8 +494,8 @@ div.form-booking {
     margin-top: 70px;
 }
 
-#part-7 .form-booking {
-    margin-top: 50px;
+#part-7 .row {
+    margin-top: 20px;
 }
 
 #part-8 {
@@ -499,8 +503,23 @@ div.form-booking {
     background-color: #f26f26;
 }
 
+.bottom-nav {
+    padding: 0 5%;
+}
+
+#part-8 .gallery {
+    background: #fff;
+}
+
+#part-8 .gallery .col-md-3 {
+    padding: 2px;
+}
 
 @media only screen and (max-width: 767px) {
+
+    .hidden-xs {
+        display: none;
+    }
 
     #part-1 .tioli {
         width: 100%;

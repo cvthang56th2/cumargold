@@ -486,7 +486,6 @@ div.form-booking {
 }
 
 .goldgra {
-    width: 85%;
     background: #ea841a;
     padding: 20px;
     color: #fff;
@@ -520,6 +519,15 @@ div.form-booking {
     font-size: 35px;
     color: #fff;
     font-weight: bold;
+}
+
+#part-11 .form-booking {
+    position: relative;
+    width: 100%;
+}
+
+#part-11 .row {
+    margin-top: 20px;
 }
 
 #wrap-footer {
