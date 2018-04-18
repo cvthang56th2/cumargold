@@ -1,0 +1,134 @@
+
+#part-1 {
+    padding: 15px 0;
+}
+
+.text-gray {
+    color: #585858;
+}
+
+#nav-content ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-content ul li {
+    display: inline;
+}
+
+.li-description .pictures {
+    display: flex;
+    justify-content: center;
+}
+
+#product-info ul {
+    padding: 0;
+}
+
+#research ol { 
+    counter-reset: item;
+    padding: 0
+}
+#research ol li { 
+    display: block 
+}
+#research ol li:before { 
+    content: counters(item, ".") ". "; 
+    counter-increment: item;
+}
+
+
+#wrap-footer .social-network ul {
+    text-align: center;
+}
+
+#advertisement {
+    cursor: pointer;
+}
+
+#expert-opinions {
+    cursor: pointer;
+}
+
+.left-content h1 {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #f37020;
+}
+
+.qa-form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5%;
+    margin-bottom: 20px;
+}
+
+.qa-form h3 {
+    margin-bottom: 20px;
+}
+
+.question {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.question .col-md-1 {
+    display: block;
+    color: #f37020;
+    font-size: 40px;
+}
+
+.question .title h5 {
+    color: #f37021 !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.question .question-author {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.question:nth-child(odd) {
+    background: #f3f3f3;
+    fill: #f3f3f3;
+}
+
+#uso_total_value {
+    display: inline;
+    width: 20% !important;
+    text-align: center;
+}
+
+#wrap-booking .table {
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+#wrap-booking .table button {
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    background-color: #f37020;
+    color: #fff;
+}
+
+#wrap-booking .table button:hover {
+    background-color: #18ce79;
+    transition: .3s ease-out;
+}
+
+#wrap-booking .table button:focus {
+    outline: none;
+}
+
+#wrap-booking .table button.is-disabled {
+    cursor: not-allowed;
+    background: #585858;
+}
