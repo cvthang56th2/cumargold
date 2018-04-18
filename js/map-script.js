@@ -2,11 +2,6 @@
 function initMap() {
   var listLatLng = [
     {
-      name: "Address 1",
-      lat: 10.823099,
-      lng: 106.629664
-    },
-    {
       name: "Address 2",
       lat: 21.027764,
       lng: 105.834160
@@ -42,9 +37,13 @@ function initMap() {
       lng: 90.22089629980474
     },
   ];
-  var start = listLatLng[0];
+  var start = {
+    name: "Address 1",
+    lat: 10.823099,
+    lng: 106.629664
+  };
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 7,
+    zoom: 10,
     center: start
   });
   var marker = new google.maps.Marker({
@@ -59,15 +58,11 @@ function initMap() {
   var markerIconActive = {
     url: "./images/marker-inactive.png",
     scaledSize: new google.maps.Size(50, 50), // scaled size
-    origin: new google.maps.Point(0, 0), // origin
-    anchor: new google.maps.Point(0, 0) // anchor
   };
 
   var markerIconInactive = {
     url: "./images/marker-inactive.png",
     scaledSize: new google.maps.Size(50, 50), // scaled size
-    origin: new google.maps.Point(0, 0), // origin
-    anchor: new google.maps.Point(0, 0) // anchor
   };
 
   var arrAddressMarker = [];
@@ -83,7 +78,7 @@ function initMap() {
     arrAddressMarker.push(addressMarker);
 
     $('.wrap-list-address ul').append("<li>" + item.name + "</li>")
-    var idxString = (idx + 2).toString();
+    var idxString = (idx+2).toString();
     var markerLi = ".wrap-list-address ul li:nth-child(" + idxString + ")";
     $(markerLi).click(function () {
       map.setZoom(7);
@@ -101,21 +96,16 @@ function initMap() {
         addressItem.setIcon({
           url: "./images/marker-inactive.png",
           scaledSize: new google.maps.Size(50, 50), // scaled size
-          origin: new google.maps.Point(0, 0), // origin
-          anchor: new google.maps.Point(0, 0) // anchor
         })
       })
 
       addressMarker.setIcon({
         url: "./images/marker-active.png",
         scaledSize: new google.maps.Size(50, 50), // scaled size
-        origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(0, 0) // anchor
       });
 
       window.setTimeout(function () {
         map.setZoom(10);
-        map.setCenter(addressMarker.getPosition());
       }, 2000)
     })
 
@@ -135,21 +125,16 @@ function initMap() {
         addressItem.setIcon({
           url: "./images/marker-inactive.png",
           scaledSize: new google.maps.Size(50, 50), // scaled size
-          origin: new google.maps.Point(0, 0), // origin
-          anchor: new google.maps.Point(0, 0) // anchor
         })
       })
 
       addressMarker.setIcon({
         url: "./images/marker-active.png",
         scaledSize: new google.maps.Size(50, 50), // scaled size
-        origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(0, 0) // anchor
       });
 
       window.setTimeout(function () {
         map.setZoom(10);
-        map.setCenter(addressMarker.getPosition());
       }, 2000)
 
     })
@@ -163,8 +148,6 @@ function initMap() {
       addressItem.setIcon({
         url: "./images/marker-inactive.png",
         scaledSize: new google.maps.Size(50, 50), // scaled size
-        origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(0, 0) // anchor
       })
     })
 
@@ -175,7 +158,6 @@ function initMap() {
 
     window.setTimeout(function () {
       map.setZoom(10);
-      map.setCenter(addressMarker.getPosition());
     }, 2000)
   })
 
@@ -187,8 +169,6 @@ function initMap() {
       addressItem.setIcon({
         url: "./images/marker-inactive.png",
         scaledSize: new google.maps.Size(50, 50), // scaled size
-        origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(0, 0) // anchor
       })
     })
 
@@ -198,7 +178,6 @@ function initMap() {
     });
     window.setTimeout(function () {
       map.setZoom(10);
-      map.setCenter(addressMarker.getPosition());
     }, 2000)
   })
 
