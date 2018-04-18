@@ -25,3 +25,7 @@
 .wrap-map {
     width: 70%;
 }
+
+.infoWindowContent h4 {
+    font-size: 20px;
+}
