@@ -1,0 +1,48 @@
+#map {
+    width: 100%;
+    height: 500px;;
+}
+
+#map1 {
+    width: 100%;
+    height: 500px;;
+}
+
+.main-content {
+    display: block !important;
+}
+
+.wrap-list-address {
+    width: 30%;
+}
+
+.wrap-add-marker {
+    display: flex;
+}
+
+.wrap-list-address ul {
+    padding: 0;
+}
+
+.wrap-list-address ul li {
+    padding: 10px;
+    background: rgb(61, 161, 57);
+    width: 100%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    list-style-type: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+.wrap-map {
+    width: 70%;
+}
+
+.infoWindowContent h4 {
+    font-size: 20px;
+}
+
+.wrap-view-map {
+    display: flex;
+}
