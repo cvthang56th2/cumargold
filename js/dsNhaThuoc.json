@@ -1,0 +1,41 @@
+[
+    {
+        "id": 6,
+        "TenNhaThuoc": "Nhà Thuốc Thanh Hoài",
+        "DiaChi": "Khu Liên Cơ 2- Hàn Thuyên- Xương Huân",
+        "DienThoai": null,
+        "Images": null,
+        "lng": 109.194404,
+        "lat": 12.254604,
+        "MaHuyen": 1,
+        "MaTinh": 1,
+        "TenHuyen": "TP Nha Trang",
+        "TenTinh": "Khánh Hòa"
+    },
+    {
+        "id": 7,
+        "TenNhaThuoc": "Nhà Thuốc tư nhân Tháp Bà",
+        "DiaChi": "86K Tháp Bà, Phường Vĩnh Thọ",
+        "DienThoai": null,
+        "Images": null,
+        "lng": 109.200769,
+        "lat": 12.266339,
+        "MaHuyen": 1,
+        "MaTinh": 1,
+        "TenHuyen": "TP Nha Trang",
+        "TenTinh": "Khánh Hòa"
+    },
+    {
+        "id": 8,
+        "TenNhaThuoc": "Nhà thuốc Kim Luận",
+        "DiaChi": "Thị xã Sông Cầu",
+        "DienThoai": null,
+        "Images": null,
+        "lng": 109.146584,
+        "lat": 13.523581,
+        "MaHuyen": 6,
+        "MaTinh": 2,
+        "TenHuyen": "Sông Cầu",
+        "TenTinh": "Phú Yên"
+    }
+]
