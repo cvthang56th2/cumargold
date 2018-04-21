@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#wrap-banner-slide').slick({
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 3500,
         dots: true,
         swipe: false,
