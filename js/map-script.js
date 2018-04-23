@@ -4,6 +4,10 @@ function initMap() {
     data.map(function (e) {
       listLatLng.push(e);
     })
+    var shortestMarker;
+    var shortestInfoWindow;
+    var showRouteService;
+    var infoWindowCurrentLocation;
 
     listLatLng.map(function (e) {
       e.lat = parseFloat(e.lat);
@@ -15,12 +19,12 @@ function initMap() {
       lng: listLatLng[0].lng
     };
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
+      zoom: 5,
       center: start
     });
 
     var markerIconActive = {
-      url: "./images/marker-inactive.png",
+      url: "./images/marker-active.png",
       scaledSize: new google.maps.Size(50, 50), // scaled size
     };
 
@@ -48,13 +52,41 @@ function initMap() {
 
         arrAddressMarker.push(addressMarker);
 
-        $('.wrap-list-address ul').append("<li>" + item.TenNhaThuoc + "</li>")
+        var liIdx = idx + 1;
+
+        var liDiv = '<div>'
+        + '<h5><span>'+ liIdx +'. </span>'+item.TenNhaThuoc + '</h5>'
+        + '<p>' + item.DiaChi + '</p>'
+        '</di>'
+
+        $('.wrap-list-address ul').append('<li>' + liDiv +'</li>')
         var idxString = (idx + 1).toString();
         var markerLi = ".wrap-list-address ul li:nth-child(" + idxString + ")";
 
         // Sự kiện trong danh sách li
         $(markerLi).click(function () {
-          map.setZoom(7);
+          $('.wrap-list-address ul li').removeClass('active');
+          $(markerLi).addClass('active');
+          arrAddressMarker.map(function (e) {
+            e.setMap(map);
+          })
+          if (typeof shortestMarker != 'undefined') {
+            shortestMarker.setMap(null);
+          }
+
+          if (typeof shortestInfoWindow != 'undefined') {
+            shortestInfoWindow.close();
+          }
+
+          if (typeof showRouteService != 'undefined') {
+            showRouteService.setMap(null);
+          }
+
+          if (typeof infoWindowCurrentLocation != 'undefined') {
+            infoWindowCurrentLocation.close();
+          }
+
+          map.setZoom(14);
           map.setCenter({
             lat: item.lat,
             lng: item.lng
@@ -82,6 +114,8 @@ function initMap() {
             scaledSize: new google.maps.Size(50, 50),
           });
 
+          addressMarker.setAnimation(google.maps.Animation.DROP);
+
           addressMarker.setZIndex(9999);
 
           arrInfoWindow.map(function (infoWindowItem, infoIdx) {
@@ -90,13 +124,19 @@ function initMap() {
 
           infoWindow.open(map, addressMarker);
 
-          window.setTimeout(function () {
-            map.setZoom(10);
-          }, 2000)
+          
         })
 
         // Sự kiện nhấn marker
         addressMarker.addListener('click', function () {
+          if (typeof shortestMarker != 'undefined') {
+            shortestMarker.setMap(null);
+          }
+
+          if (typeof shortestInfoWindow != 'undefined') {
+            shortestInfoWindow.close();
+          }
+
           map.setZoom(7);
           map.setCenter({
             lat: item.lat,
@@ -133,9 +173,6 @@ function initMap() {
 
           infoWindow.open(map, addressMarker);
 
-          window.setTimeout(function () {
-            map.setZoom(10);
-          }, 2000)
 
         })
       })
@@ -150,28 +187,94 @@ function initMap() {
       $('#listLatLng').append("<li>" + lat + " - " + lng + "</li>")
     });
 
-    $('#btn-location').click(function () {
-      var infoWindow1 = new google.maps.InfoWindow;
-      // Try HTML5 geolocation.
+    function displayRoute(routeService, showRouteService) {
+      infoWindowCurrentLocation = new google.maps.InfoWindow;
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
           var pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          infoWindow1.setPosition(pos);
-          infoWindow1.setContent('Location found.');
-          infoWindow1.open(map);
-          $('.myLat').html(pos.lat);
-          $('.myLng').html(pos.lng);
-          map.setCenter(pos);
+          infoWindowCurrentLocation.setPosition(pos);
+          infoWindowCurrentLocation.setContent('Vị trí hiện tại của bạn');
+          infoWindowCurrentLocation.open(map);
+          var myLat = parseFloat(pos.lat);
+          var myLng = parseFloat(pos.lng);
+          var routeResults = [];
+
+          findNearestPlace();
+
+
+          function findNearestPlace() {
+            var i = listLatLng.length;
+            size = listLatLng.length;
+            routeResults = [];
+            while (i--) {
+              calcRoute({
+                "lat": parseFloat(listLatLng[i].lat),
+                "lng": parseFloat(listLatLng[i].lng)
+              }, storeResult);
+            }
+          }
+
+          function calcRoute(end, callback) {
+            var request = {
+              origin: pos,
+              destination: end,
+              travelMode: google.maps.TravelMode.DRIVING
+            };
+            routeService.route(request, function (response, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+                callback(response);
+              } else {
+                size--;
+              }
+            });
+          }
+
+          function storeResult(data) {
+            routeResults.push(data);
+            if (routeResults.length === size) {
+              findShortest();
+            }
+          }
+
+          function findShortest() {
+            var i = routeResults.length;
+            var shortestIndex = 0;
+            var shortestLength = routeResults[0].routes[0].legs[0].distance.value;
+
+            while (i--) {
+              if (routeResults[i].routes[0].legs[0].distance.value < shortestLength) {
+                shortestIndex = i;
+                shortestLength = routeResults[i].routes[0].legs[0].distance.value;
+              }
+            }
+            showRouteService.setDirections(routeResults[shortestIndex]);
+            arrAddressMarker.map(function (e) {
+              e.setMap(null);
+            })
+            console.log(routeResults[shortestIndex]);
+          }
         }, function () {
           handleLocationError(true, infoWindow1, map.getCenter());
         });
       } else {
-        // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow1, map.getCenter());
       }
+
+    }
+
+
+    $('#btn-direction').click(function () {
+      var routeService = new google.maps.DirectionsService;
+      showRouteService = new google.maps.DirectionsRenderer;
+      showRouteService.setMap(map);
+      var getRoute = function () {
+        displayRoute(routeService, showRouteService);
+      };
+      getRoute();
+
     })
 
     var listFilterProvince = [];
@@ -196,6 +299,8 @@ function initMap() {
       arrInfoWindow.map(function (infoWindowItem, infoIdx) {
         infoWindowItem.close();
       })
+      arrAddressMarker = [];
+      arrInfoWindow = [];
       if (selectedFilterValue === "all") {
         listFiltered = listLatLng;
       } else {
@@ -209,7 +314,21 @@ function initMap() {
         lat: listFiltered[0].lat,
         lng: listFiltered[0].lng
       });
+      if (typeof shortestMarker != 'undefined') {
+        shortestMarker.setMap(null);
+      }
 
+      if (typeof shortestInfoWindow != 'undefined') {
+        shortestInfoWindow.close();
+      }
+
+      if (typeof showRouteService != 'undefined') {
+        showRouteService.setMap(null);
+      }
+
+      if (typeof infoWindowCurrentLocation != 'undefined') {
+        infoWindowCurrentLocation.close();
+      }
       showMarker(listFiltered);
     })
 

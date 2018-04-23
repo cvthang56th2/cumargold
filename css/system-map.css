@@ -4,7 +4,9 @@
 }
 
 .wrap-list-address {
-    width: 30%;
+    width: 40%;
+    height: 500px;
+    overflow-y: scroll;
 }
 
 .wrap-list-address ul {
@@ -13,19 +15,79 @@
 
 .wrap-list-address ul li {
     padding: 10px;
-    background: rgb(61, 161, 57);
-    width: 100%;
-    border: 1px solid #fff;
+    margin: 0;
+    background-color: #f2f2f2;
+    transition: all .25s ease-in-out;
+    position: relative;
     cursor: pointer;
-    list-style-type: none;
+}
+
+.wrap-list-address ul li:hover {
+    background: #b4b1b177;
+}
+
+.wrap-list-address .active {
+    background: #f37021;
+}
+
+.wrap-list-address .active h5 {
     color: #fff;
+}
+
+.wrap-list-address .active p {
+    color: #000;
+}
+
+
+.wrap-list-address ul li div h5 {
+    color: rgb(46, 46, 46);
+    font-size: 14px;
     font-weight: 700;
 }
 
+.wrap-list-address ul li div p {
+    font-size: 14px;
+    color: rgb(142, 142, 142);
+}
+
 .wrap-map {
-    width: 70%;
+    width: 60%;
 }
 
 .infoWindowContent h4 {
     font-size: 20px;
+}
+
+#wrap-filter {
+    margin-bottom: 10px;
+}
+
+#btn-direction {
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    animation: opacityAnim 0.75s infinite;
+    padding: 10px;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes opacityAnim {
+    0% {
+        color: #5ca0e0;
+    }
+    50% {
+        color: #fff;
+    }
+    100% {
+        color: #007fff;
+    }
+}
+
+#btn-direction:hover {
+    background-color: #f37021;
+}
+
+#wrap-filter-province select {
+    padding: 10px;
 }
