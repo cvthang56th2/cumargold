@@ -18,6 +18,9 @@ function initMap() {
       lat: listLatLng[0].lat,
       lng: listLatLng[0].lng
     };
+
+    var currentAddress = listLatLng[0];
+
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 5,
       center: start
@@ -25,12 +28,12 @@ function initMap() {
 
     var markerIconActive = {
       url: "./images/marker-active.png",
-      scaledSize: new google.maps.Size(50, 50), // scaled size
+      scaledSize: new google.maps.Size(40, 40), // scaled size
     };
 
     var markerIconInactive = {
       url: "./images/marker-inactive.png",
-      scaledSize: new google.maps.Size(50, 50), // scaled size
+      scaledSize: new google.maps.Size(40, 40), // scaled size
     };
     var arrAddressMarker = [];
     var arrInfoWindow = [];
@@ -46,7 +49,7 @@ function initMap() {
         if (idx == 0) {
           addressMarker.setIcon({
             url: "./images/marker-active.png",
-            scaledSize: new google.maps.Size(50, 50),
+            scaledSize: new google.maps.Size(40, 40),
           });
         }
 
@@ -55,16 +58,17 @@ function initMap() {
         var liIdx = idx + 1;
 
         var liDiv = '<div>'
-        + '<h5><span>'+ liIdx +'. </span>'+item.TenNhaThuoc + '</h5>'
-        + '<p>Địa chỉ: ' + item.DiaChi + '</p>'
-        '</di>'
+          + '<h5><span>' + liIdx + '. </span>' + item.TenNhaThuoc + '</h5>'
+          + '<p>Địa chỉ: ' + item.DiaChi + '</p>'
+        '</div>'
 
-        $('.wrap-list-address ul').append('<li>' + liDiv +'</li>')
+        $('.wrap-list-address ul').append('<li>' + liDiv + '</li>')
         var idxString = (idx + 1).toString();
         var markerLi = ".wrap-list-address ul li:nth-child(" + idxString + ")";
 
         // Sự kiện trong danh sách li
         $(markerLi).click(function () {
+          currentAddress = item;
           $('.wrap-list-address ul li').removeClass('active');
           $(markerLi).addClass('active');
           arrAddressMarker.map(function (e) {
@@ -86,7 +90,7 @@ function initMap() {
             infoWindowCurrentLocation.close();
           }
 
-          map.setZoom(14);
+          map.setZoom(16);
           map.setCenter({
             lat: item.lat,
             lng: item.lng
@@ -103,7 +107,7 @@ function initMap() {
           arrAddressMarker.map(function (addressItem, addressIdx) {
             addressItem.setIcon({
               url: "./images/marker-inactive.png",
-              scaledSize: new google.maps.Size(50, 50),
+              scaledSize: new google.maps.Size(40, 40),
             })
 
             addressItem.setZIndex(1);
@@ -111,7 +115,7 @@ function initMap() {
 
           addressMarker.setIcon({
             url: "./images/marker-active.png",
-            scaledSize: new google.maps.Size(50, 50),
+            scaledSize: new google.maps.Size(40, 40),
           });
 
           addressMarker.setAnimation(google.maps.Animation.DROP);
@@ -124,7 +128,7 @@ function initMap() {
 
           infoWindow.open(map, addressMarker);
 
-          
+
         })
 
         // Sự kiện nhấn marker
@@ -137,7 +141,7 @@ function initMap() {
             shortestInfoWindow.close();
           }
 
-          map.setZoom(7);
+          map.setZoom(16);
           map.setCenter({
             lat: item.lat,
             lng: item.lng
@@ -154,7 +158,7 @@ function initMap() {
           arrAddressMarker.map(function (addressItem, addressIdx) {
             addressItem.setIcon({
               url: "./images/marker-inactive.png",
-              scaledSize: new google.maps.Size(50, 50),
+              scaledSize: new google.maps.Size(40, 40),
             })
 
             addressItem.setZIndex(1);
@@ -162,7 +166,7 @@ function initMap() {
 
           addressMarker.setIcon({
             url: "./images/marker-active.png",
-            scaledSize: new google.maps.Size(50, 50),
+            scaledSize: new google.maps.Size(40, 40),
           });
 
           addressMarker.setZIndex(9999);
@@ -177,8 +181,56 @@ function initMap() {
         })
       })
     }
+
     showMarker(listLatLng);
 
+    $('#btn-chi-duong').click(function () {
+      infoWindowCurrentLocation = new google.maps.InfoWindow;
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          infoWindowCurrentLocation.setPosition(pos);
+          infoWindowCurrentLocation.setContent('Vị trí hiện tại của bạn');
+          infoWindowCurrentLocation.open(map);
+          var myLat = parseFloat(pos.lat);
+          var myLng = parseFloat(pos.lng);
+          routeService = new google.maps.DirectionsService;
+          showRouteService = new google.maps.DirectionsRenderer;
+          showRouteService.setMap(map);
+
+          routeService.route(
+            {
+              origin: {
+                "lat": myLat,
+                "lng": myLng
+              },
+              destination: currentAddress,
+              travelMode: 'DRIVING'
+            },
+            function (response, status) {
+              showRouteService.setOptions({
+                markerOptions: {
+                  visible: false
+                }
+              })
+              showRouteService.setMap(map);
+              if (status === 'OK') {
+                showRouteService.setDirections(response);
+              } else {
+                window.alert('Không tìm thấy vì ' + status);
+              }
+            }
+          );
+        }, function () {
+          handleLocationError(true, infoWindow1, map.getCenter());
+        });
+      } else {
+        handleLocationError(false, infoWindow1, map.getCenter());
+      }
+    })
 
     // Sự kiện click vào map
     google.maps.event.addListener(map, 'click', function (event) {
@@ -254,7 +306,17 @@ function initMap() {
             arrAddressMarker.map(function (e) {
               e.setMap(null);
             })
-            console.log(routeResults[shortestIndex]);
+            listLatLng.map(function (e) {
+              if (Math.round(e.lat * 10) / 10 == Math.round(routeResults[shortestIndex].routes[0].legs[0].end_location.lat() * 10) / 10
+                && Math.round(e.lng * 10) / 10 == Math.round(routeResults[shortestIndex].routes[0].legs[0].end_location.lng() * 10) / 10) {
+                routeResults[shortestIndex].routes[0].legs[0].end_address = '<div class="infoWindowContent">'
+                  + '<p style="color: red">Nhà thuốc bạn gần nhất: </p>'
+                  + '<h4>' + e.TenNhaThuoc + '</h4>'
+                  + '<p>Địa chỉ: ' + e.DiaChi + '</p>'
+                  + '<p>Phone: ' + e.DienThoai + '</p>'
+                  + '</div>'
+              }
+            })
           }
         }, function () {
           handleLocationError(true, infoWindow1, map.getCenter());
