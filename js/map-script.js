@@ -56,7 +56,7 @@ function initMap() {
 
         var liDiv = '<div>'
         + '<h5><span>'+ liIdx +'. </span>'+item.TenNhaThuoc + '</h5>'
-        + '<p>' + item.DiaChi + '</p>'
+        + '<p>Địa chỉ: ' + item.DiaChi + '</p>'
         '</di>'
 
         $('.wrap-list-address ul').append('<li>' + liDiv +'</li>')
