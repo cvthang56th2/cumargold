@@ -286,7 +286,7 @@ function initMap() {
 
     // Sự kiện click vào map
     google.maps.event.addListener(map, 'click', function (event) {
-      
+
     });
 
     function displayRoute(routeService, showRouteService) {
@@ -357,7 +357,7 @@ function initMap() {
                 shortestLength = routeResults[i].routes[0].legs[0].distance.value;
               }
             }
-            
+
             showRouteService.setDirections(routeResults[shortestIndex]);
             arrAddressMarker.map(function (e) {
               e.setMap(null);
@@ -407,6 +407,8 @@ function initMap() {
 
     })
 
+    var listFiltered = [];
+
     var listFilterProvince = [];
     listLatLng.map(function (e, i) {
       listFilterProvince.push(e.TenTinh);
@@ -418,7 +420,14 @@ function initMap() {
       $('#filter-province').append('<option value="' + e + '">' + e + '</option>')
     })
 
+    var listFilterDistrict = [];
+    var listFilteredBoth = [];
+
     $('#filter-province').change(function () {
+      if (typeof showRouteServiceChiDuong != 'undefined') {
+        showRouteServiceChiDuong.setMap(null);
+      }
+
       if (typeof shortestMarker != 'undefined') {
         shortestMarker.setMap(null);
       }
@@ -435,12 +444,14 @@ function initMap() {
         infoWindowCurrentLocation.close();
       }
 
-      if (typeof showRouteServiceChiDuong != 'undefined') {
-        showRouteServiceChiDuong.setMap(null);
+      if (typeof markerCurrentAddress != 'undefined') {
+        markerCurrentAddress.setMap(null);
       }
+      
       $('.wrap-list-address ul').empty();
       var selectedFilterValue = this.value;
-      var listFiltered = [];
+      listFiltered = [];
+      listFilterDistrict = [];
       arrAddressMarker.map(function (item, idx) {
         item.setMap(null);
       })
@@ -455,6 +466,7 @@ function initMap() {
         listLatLng.map(function (e, i) {
           if (e.TenTinh === selectedFilterValue) {
             listFiltered.push(e);
+            listFilterDistrict.push(e.TenHuyen);
           }
         })
       }
@@ -462,6 +474,26 @@ function initMap() {
         lat: listFiltered[0].lat,
         lng: listFiltered[0].lng
       });
+      map.setZoom(9);
+
+      showMarker(listFiltered);
+
+      listFilterDistrict = $.unique(listFilterDistrict).sort();
+
+      $('#filter-district').html('<option value="all" selected>Chọn tỉnh huyện...</option>')
+
+      listFilterDistrict.map(function (e, i) {
+        $('#filter-district').append('<option value="' + e + '">' + e + '</option>')
+      })
+
+    })
+    
+    $('#filter-district').change(function () {
+
+      if (typeof showRouteServiceChiDuong != 'undefined') {
+        showRouteServiceChiDuong.setMap(null);
+      }
+
       if (typeof shortestMarker != 'undefined') {
         shortestMarker.setMap(null);
       }
@@ -482,9 +514,36 @@ function initMap() {
         markerCurrentAddress.setMap(null);
       }
 
-      showMarker(listFiltered);
-    })
+      $('.wrap-list-address ul').empty();
+      var selectedFilterValue = this.value;
+      listFilteredBoth = [];
+      arrAddressMarker.map(function (item, idx) {
+        item.setMap(null);
+      })
+      arrInfoWindow.map(function (infoWindowItem, infoIdx) {
+        infoWindowItem.close();
+      })
+      map.setZoom(13);
+      arrAddressMarker = [];
+      arrInfoWindow = [];
+      if (selectedFilterValue === "all") {
+        listFilteredBoth = listFiltered;
+      } else {
+        listFiltered.map(function (e, i) {
+          if (e.TenHuyen === selectedFilterValue) {
+            listFilteredBoth.push(e);
+          }
+        })
+      }
+      map.setCenter({
+        lat: listFilteredBoth[0].lat,
+        lng: listFilteredBoth[0].lng
+      });
+     
 
+      showMarker(listFilteredBoth);
+
+    })
   });
 
 

@@ -93,7 +93,7 @@
     background-color: #f37021;
 }
 
-#wrap-filter-province select {
+#wrap-filter-province select, #wrap-filter-district select {
     padding: 10px;
 }
 
