@@ -72,9 +72,34 @@
     animation-timing-function: ease-in-out;
 }
 
+#btn-direction:focus, #btn-chi-duong:focus, select:focus {
+    outline: none;
+}
+
 #btn-chi-duong {
     animation: none;
     color: #5ca0e0;
+}
+
+
+.shortest-address.active h4 {
+    color: #fff;
+}
+
+.shortest-address.active p {
+    color: #000;
+}
+
+
+.shortest-address div h4 {
+    color: rgb(46, 46, 46);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.shortest-address div p {
+    font-size: 14px;
+    color: rgb(142, 142, 142);
 }
 
 @keyframes opacityAnim {

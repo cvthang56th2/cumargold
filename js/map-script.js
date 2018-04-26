@@ -4,6 +4,7 @@ function initMap() {
     data.map(function (e) {
       listLatLng.push(e);
     })
+    var listLatLngBackUp;
     var shortestMarker;
     var shortestInfoWindow;
     var showRouteService;
@@ -16,6 +17,8 @@ function initMap() {
       e.lat = parseFloat(e.lat);
       e.lng = parseFloat(e.lng);
     })
+
+    listLatLngBackUp = listLatLng;
 
     var start = {
       lat: listLatLng[0].lat,
@@ -65,7 +68,8 @@ function initMap() {
           + '<p>Địa chỉ: ' + item.DiaChi + '</p>'
         '</div>'
 
-        $('.wrap-list-address ul').append('<li>' + liDiv + '</li>')
+        $('.wrap-list-address ul').append('<li>' + liDiv + '</li>');
+        $('.wrap-list-address ul li:first-child').addClass('active');
         var idxString = (idx + 1).toString();
         var markerLi = ".wrap-list-address ul li:nth-child(" + idxString + ")";
 
@@ -361,7 +365,8 @@ function initMap() {
             showRouteService.setDirections(routeResults[shortestIndex]);
             arrAddressMarker.map(function (e) {
               e.setMap(null);
-            })
+            });
+            
             listLatLng.map(function (e) {
               if (Math.round(e.lat * 10) / 10 == Math.round(routeResults[shortestIndex].routes[0].legs[0].end_location.lat() * 10) / 10
                 && Math.round(e.lng * 10) / 10 == Math.round(routeResults[shortestIndex].routes[0].legs[0].end_location.lng() * 10) / 10) {
@@ -372,6 +377,47 @@ function initMap() {
                   + '<p>Phone: ' + e.DienThoai + '</p>'
                   + '</div>'
               }
+            })
+
+            $('.wrap-list-address ul').append('<li class="shortest-address">' + routeResults[shortestIndex].routes[0].legs[0].end_address + '</li>');
+            $('.wrap-list-address ul').append('<li class="center" style="list-style-type:none"><button id="btn-show-list" class="btn btn-primary">Hiển thị danh sách</button></li>');
+            $('#btn-show-list').click(function() {
+              if (typeof showRouteServiceChiDuong != 'undefined') {
+                showRouteServiceChiDuong.setMap(null);
+              }
+        
+              if (typeof shortestMarker != 'undefined') {
+                shortestMarker.setMap(null);
+              }
+        
+              if (typeof shortestInfoWindow != 'undefined') {
+                shortestInfoWindow.close();
+              }
+        
+              if (typeof showRouteService != 'undefined') {
+                showRouteService.setMap(null);
+              }
+        
+              if (typeof infoWindowCurrentLocation != 'undefined') {
+                infoWindowCurrentLocation.close();
+              }
+        
+              if (typeof markerCurrentAddress != 'undefined') {
+                markerCurrentAddress.setMap(null);
+              }
+        
+              $('.wrap-list-address ul').empty();
+              arrAddressMarker.map(function (item, idx) {
+                item.setMap(null);
+              })
+              arrInfoWindow.map(function (infoWindowItem, infoIdx) {
+                infoWindowItem.close();
+              })
+
+              map.setZoom(5);
+              map.setCenter(start);
+
+              showMarker(listLatLngBackUp);
             })
           }
         }, function () {
@@ -396,7 +442,9 @@ function initMap() {
       if (typeof markerCurrentAddress != 'undefined') {
         markerCurrentAddress.setMap(null);
       }
-
+      
+      $('.wrap-list-address ul').empty();
+      
       var routeService = new google.maps.DirectionsService;
       showRouteService = new google.maps.DirectionsRenderer;
       showRouteService.setMap(map);
@@ -486,6 +534,7 @@ function initMap() {
         $('#filter-district').append('<option value="' + e + '">' + e + '</option>')
       })
 
+      currentAddress = listFiltered[0];
     })
     
     $('#filter-district').change(function () {
@@ -542,8 +591,9 @@ function initMap() {
      
 
       showMarker(listFilteredBoth);
-
+      currentAddress = listFilteredBoth[0];
     })
+
   });
 
 
