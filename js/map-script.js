@@ -407,12 +407,8 @@ function initMap() {
               }
         
               $('.wrap-list-address ul').empty();
-              arrAddressMarker.map(function (item, idx) {
-                item.setMap(null);
-              })
-              arrInfoWindow.map(function (infoWindowItem, infoIdx) {
-                infoWindowItem.close();
-              })
+              arrAddressMarker = [];
+              arrInfoWindow = [];
 
               map.setZoom(5);
               map.setCenter(start);
