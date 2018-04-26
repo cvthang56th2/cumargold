@@ -7,7 +7,10 @@ function initMap() {
     var shortestMarker;
     var shortestInfoWindow;
     var showRouteService;
+    var showRouteServiceChiDuong;
     var infoWindowCurrentLocation;
+    var infoWindowCurrentAddress;
+    var markerCurrentAddress;
 
     listLatLng.map(function (e) {
       e.lat = parseFloat(e.lat);
@@ -90,6 +93,14 @@ function initMap() {
             infoWindowCurrentLocation.close();
           }
 
+          if (typeof showRouteServiceChiDuong != 'undefined') {
+            showRouteServiceChiDuong.setMap(null);
+          }
+
+          if (typeof markerCurrentAddress != 'undefined') {
+            markerCurrentAddress.setMap(null);
+          }
+
           map.setZoom(16);
           map.setCenter({
             lat: item.lat,
@@ -141,6 +152,22 @@ function initMap() {
             shortestInfoWindow.close();
           }
 
+          if (typeof showRouteService != 'undefined') {
+            showRouteService.setMap(null);
+          }
+
+          if (typeof infoWindowCurrentLocation != 'undefined') {
+            infoWindowCurrentLocation.close();
+          }
+
+          if (typeof showRouteServiceChiDuong != 'undefined') {
+            showRouteServiceChiDuong.setMap(null);
+          }
+
+          if (typeof markerCurrentAddress != 'undefined') {
+            markerCurrentAddress.setMap(null);
+          }
+
           map.setZoom(16);
           map.setCenter({
             lat: item.lat,
@@ -185,6 +212,18 @@ function initMap() {
     showMarker(listLatLng);
 
     $('#btn-chi-duong').click(function () {
+      if (typeof shortestMarker != 'undefined') {
+        shortestMarker.setMap(null);
+      }
+
+      if (typeof showRouteService != 'undefined') {
+        showRouteService.setMap(null);
+      }
+
+      if (typeof markerCurrentAddress != 'undefined') {
+        markerCurrentAddress.setMap(null);
+      }
+
       infoWindowCurrentLocation = new google.maps.InfoWindow;
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -197,11 +236,11 @@ function initMap() {
           infoWindowCurrentLocation.open(map);
           var myLat = parseFloat(pos.lat);
           var myLng = parseFloat(pos.lng);
-          routeService = new google.maps.DirectionsService;
-          showRouteService = new google.maps.DirectionsRenderer;
-          showRouteService.setMap(map);
+          var routeServiceChiDuong = new google.maps.DirectionsService;
+          showRouteServiceChiDuong = new google.maps.DirectionsRenderer;
+          showRouteServiceChiDuong.setMap(map);
 
-          routeService.route(
+          routeServiceChiDuong.route(
             {
               origin: {
                 "lat": myLat,
@@ -211,14 +250,27 @@ function initMap() {
               travelMode: 'DRIVING'
             },
             function (response, status) {
-              showRouteService.setOptions({
+              showRouteServiceChiDuong.setOptions({
                 markerOptions: {
                   visible: false
                 }
               })
-              showRouteService.setMap(map);
+              markerCurrentAddress = new google.maps.Marker({
+                position: { lat: currentAddress.lat, lng: currentAddress.lng },
+                map: map,
+                icon: markerIconActive
+              });
+              var infoWindowCurrentAddressContent = '<div class="infoWindowContent">' + '<h4>' + currentAddress.TenNhaThuoc + '</h4>' + '<p>Địa chỉ: ' + currentAddress.DiaChi + '</p>' + '<p>Phone: ' + currentAddress.DienThoai + '</p>' + '</div>'
+
+              infoWindowCurrentAddress = new google.maps.InfoWindow({
+                content: infoWindowCurrentAddressContent
+              });
+
+              infoWindowCurrentAddress.open(map, markerCurrentAddress);
+
+              showRouteServiceChiDuong.setMap(map);
               if (status === 'OK') {
-                showRouteService.setDirections(response);
+                showRouteServiceChiDuong.setDirections(response);
               } else {
                 window.alert('Không tìm thấy vì ' + status);
               }
@@ -234,9 +286,7 @@ function initMap() {
 
     // Sự kiện click vào map
     google.maps.event.addListener(map, 'click', function (event) {
-      var lat = event.latLng.lat();
-      var lng = event.latLng.lng();
-      $('#listLatLng').append("<li>" + lat + " - " + lng + "</li>")
+      
     });
 
     function displayRoute(routeService, showRouteService) {
@@ -276,6 +326,11 @@ function initMap() {
               travelMode: google.maps.TravelMode.DRIVING
             };
             routeService.route(request, function (response, status) {
+              // showRouteService.setOptions({
+              //   markerOptions: {
+              //     visible: false
+              //   }
+              // })
               if (status == google.maps.DirectionsStatus.OK) {
                 callback(response);
               } else {
@@ -302,6 +357,7 @@ function initMap() {
                 shortestLength = routeResults[i].routes[0].legs[0].distance.value;
               }
             }
+            
             showRouteService.setDirections(routeResults[shortestIndex]);
             arrAddressMarker.map(function (e) {
               e.setMap(null);
@@ -329,6 +385,18 @@ function initMap() {
 
 
     $('#btn-direction').click(function () {
+      if (typeof shortestMarker != 'undefined') {
+        shortestMarker.setMap(null);
+      }
+
+      if (typeof showRouteServiceChiDuong != 'undefined') {
+        showRouteServiceChiDuong.setMap(null);
+      }
+
+      if (typeof markerCurrentAddress != 'undefined') {
+        markerCurrentAddress.setMap(null);
+      }
+
       var routeService = new google.maps.DirectionsService;
       showRouteService = new google.maps.DirectionsRenderer;
       showRouteService.setMap(map);
@@ -351,7 +419,25 @@ function initMap() {
     })
 
     $('#filter-province').change(function () {
+      if (typeof shortestMarker != 'undefined') {
+        shortestMarker.setMap(null);
+      }
 
+      if (typeof shortestInfoWindow != 'undefined') {
+        shortestInfoWindow.close();
+      }
+
+      if (typeof showRouteService != 'undefined') {
+        showRouteService.setMap(null);
+      }
+
+      if (typeof infoWindowCurrentLocation != 'undefined') {
+        infoWindowCurrentLocation.close();
+      }
+
+      if (typeof showRouteServiceChiDuong != 'undefined') {
+        showRouteServiceChiDuong.setMap(null);
+      }
       $('.wrap-list-address ul').empty();
       var selectedFilterValue = this.value;
       var listFiltered = [];
@@ -391,6 +477,11 @@ function initMap() {
       if (typeof infoWindowCurrentLocation != 'undefined') {
         infoWindowCurrentLocation.close();
       }
+
+      if (typeof markerCurrentAddress != 'undefined') {
+        markerCurrentAddress.setMap(null);
+      }
+
       showMarker(listFiltered);
     })
 
