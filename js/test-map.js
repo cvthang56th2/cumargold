@@ -1,17 +1,18 @@
 function initMap() {
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 5,
+
+  });
+
   $.getJSON("http://localhost/cumargold/js/dsNhaThuoc.json", function (data) {
     var listLatLng = [];
     data.map(function (e) {
       listLatLng.push(e);
     })
-    var listLatLngBackUp;
-    var shortestMarker;
-    var shortestInfoWindow;
-    var showRouteService;
-    var showRouteServiceChiDuong;
-    var infoWindowCurrentLocation;
-    var infoWindowCurrentAddress;
-    var markerCurrentAddress;
+
+    var arrAddressMarker = [];
+    var arrInfoWindow = [];
 
     listLatLng.map(function (e) {
       e.lat = parseFloat(e.lat);
@@ -27,10 +28,7 @@ function initMap() {
 
     var currentAddress = listLatLng[0];
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 5,
-      center: start
-    });
+    map.setCenter(start);
 
     var markerIconActive = {
       url: "./images/marker-active.png",
@@ -41,8 +39,7 @@ function initMap() {
       url: "./images/marker-inactive.png",
       scaledSize: new google.maps.Size(40, 40), // scaled size
     };
-    var arrAddressMarker = [];
-    var arrInfoWindow = [];
+
 
     function showMarker(listLatLng) {
       listLatLng.map(function (item, idx) {
@@ -58,22 +55,24 @@ function initMap() {
               url: "./images/marker-active.png",
               scaledSize: new google.maps.Size(40, 40),
             });
+
+            addressMarker.setZIndex(99999);
           }
-  
+
           arrAddressMarker.push(addressMarker);
-  
+
           var liIdx = idx + 1;
-  
+
           var liDiv = '<div>'
             + '<h5><span>' + liIdx + '. </span>' + item.TenNhaThuoc + '</h5>'
             + '<p>Địa chỉ: ' + item.DiaChi + '</p>'
           '</div>'
-  
+
           $('.wrap-list-address ul').append('<li>' + liDiv + '</li>');
           $('.wrap-list-address ul li:first-child').addClass('active');
           var idxString = (idx + 1).toString();
           var markerLi = ".wrap-list-address ul li:nth-child(" + idxString + ")";
-  
+
           // Sự kiện trong danh sách li
           $(markerLi).click(function () {
             currentAddress = item;
@@ -85,131 +84,131 @@ function initMap() {
             if (typeof shortestMarker != 'undefined') {
               shortestMarker.setMap(null);
             }
-  
+
             if (typeof shortestInfoWindow != 'undefined') {
               shortestInfoWindow.close();
             }
-  
+
             if (typeof showRouteService != 'undefined') {
               showRouteService.setMap(null);
             }
-  
+
             if (typeof infoWindowCurrentLocation != 'undefined') {
               infoWindowCurrentLocation.close();
             }
-  
+
             if (typeof showRouteServiceChiDuong != 'undefined') {
               showRouteServiceChiDuong.setMap(null);
             }
-  
+
             if (typeof markerCurrentAddress != 'undefined') {
               markerCurrentAddress.setMap(null);
             }
-  
+
             map.setZoom(16);
             map.setCenter({
               lat: item.lat,
               lng: item.lng
             });
-  
+
             var infoContent = '<div class="infoWindowContent">' + '<h4>' + item.TenNhaThuoc + '</h4>' + '<p>Địa chỉ: ' + item.DiaChi + '</p>' + '<p>Phone: ' + item.DienThoai + '</p>' + '</div>'
-  
+
             infoWindow = new google.maps.InfoWindow({
               content: infoContent
             });
-  
+
             arrInfoWindow.push(infoWindow);
-  
+
             arrAddressMarker.map(function (addressItem, addressIdx) {
               addressItem.setIcon({
                 url: "./images/marker-inactive.png",
                 scaledSize: new google.maps.Size(40, 40),
               })
-  
+
               addressItem.setZIndex(1);
             })
-  
+
             addressMarker.setIcon({
               url: "./images/marker-active.png",
               scaledSize: new google.maps.Size(40, 40),
             });
-  
+
             addressMarker.setAnimation(google.maps.Animation.DROP);
-  
+
             addressMarker.setZIndex(9999);
-  
+
             arrInfoWindow.map(function (infoWindowItem, infoIdx) {
               infoWindowItem.close();
             })
-  
+
             infoWindow.open(map, addressMarker);
-  
-  
+
+
           })
-  
+
           // Sự kiện nhấn marker
           addressMarker.addListener('click', function () {
             if (typeof shortestMarker != 'undefined') {
               shortestMarker.setMap(null);
             }
-  
+
             if (typeof shortestInfoWindow != 'undefined') {
               shortestInfoWindow.close();
             }
-  
+
             if (typeof showRouteService != 'undefined') {
               showRouteService.setMap(null);
             }
-  
+
             if (typeof infoWindowCurrentLocation != 'undefined') {
               infoWindowCurrentLocation.close();
             }
-  
+
             if (typeof showRouteServiceChiDuong != 'undefined') {
               showRouteServiceChiDuong.setMap(null);
             }
-  
+
             if (typeof markerCurrentAddress != 'undefined') {
               markerCurrentAddress.setMap(null);
             }
-  
+
             map.setZoom(16);
             map.setCenter({
               lat: item.lat,
               lng: item.lng
             });
-  
+
             var infoContent = '<div class="infoWindowContent">' + '<h4>' + item.TenNhaThuoc + '</h4>' + '<p>Địa chỉ: ' + item.DiaChi + '</p>' + '<p>Phone: ' + item.DienThoai + '</p>' + '</div>'
-  
+
             infoWindow = new google.maps.InfoWindow({
               content: infoContent
             });
-  
+
             arrInfoWindow.push(infoWindow);
-  
+
             arrAddressMarker.map(function (addressItem, addressIdx) {
               addressItem.setIcon({
                 url: "./images/marker-inactive.png",
                 scaledSize: new google.maps.Size(40, 40),
               })
-  
+
               addressItem.setZIndex(1);
             })
-  
+
             addressMarker.setIcon({
               url: "./images/marker-active.png",
               scaledSize: new google.maps.Size(40, 40),
             });
-  
+
             addressMarker.setZIndex(9999);
-  
+
             arrInfoWindow.map(function (infoWindowItem, infoIdx) {
               infoWindowItem.close();
             })
-  
+
             infoWindow.open(map, addressMarker);
-  
-  
+
+
           })
         }
 
@@ -291,10 +290,6 @@ function initMap() {
       }
     })
 
-    // Sự kiện click vào map
-    google.maps.event.addListener(map, 'click', function (event) {
-
-    });
 
     function displayRoute(routeService, showRouteService) {
       infoWindowCurrentLocation = new google.maps.InfoWindow;
@@ -369,7 +364,7 @@ function initMap() {
             arrAddressMarker.map(function (e) {
               e.setMap(null);
             });
-            
+
             listLatLng.map(function (e) {
               if (Math.round(e.lat * 10) / 10 == Math.round(routeResults[shortestIndex].routes[0].legs[0].end_location.lat() * 10) / 10
                 && Math.round(e.lng * 10) / 10 == Math.round(routeResults[shortestIndex].routes[0].legs[0].end_location.lng() * 10) / 10) {
@@ -384,31 +379,31 @@ function initMap() {
 
             $('.wrap-list-address ul').append('<li class="shortest-address">' + routeResults[shortestIndex].routes[0].legs[0].end_address + '</li>');
             $('.wrap-list-address ul').append('<li class="center" style="list-style-type:none"><button id="btn-show-list" class="btn btn-primary">Hiển thị danh sách</button></li>');
-            $('#btn-show-list').click(function() {
+            $('#btn-show-list').click(function () {
               if (typeof showRouteServiceChiDuong != 'undefined') {
                 showRouteServiceChiDuong.setMap(null);
               }
-        
+
               if (typeof shortestMarker != 'undefined') {
                 shortestMarker.setMap(null);
               }
-        
+
               if (typeof shortestInfoWindow != 'undefined') {
                 shortestInfoWindow.close();
               }
-        
+
               if (typeof showRouteService != 'undefined') {
                 showRouteService.setMap(null);
               }
-        
+
               if (typeof infoWindowCurrentLocation != 'undefined') {
                 infoWindowCurrentLocation.close();
               }
-        
+
               if (typeof markerCurrentAddress != 'undefined') {
                 markerCurrentAddress.setMap(null);
               }
-        
+
               $('.wrap-list-address ul').empty();
               arrAddressMarker = [];
               arrInfoWindow = [];
@@ -441,9 +436,9 @@ function initMap() {
       if (typeof markerCurrentAddress != 'undefined') {
         markerCurrentAddress.setMap(null);
       }
-      
+
       $('.wrap-list-address ul').empty();
-      
+
       var routeService = new google.maps.DirectionsService;
       showRouteService = new google.maps.DirectionsRenderer;
       showRouteService.setMap(map);
@@ -494,7 +489,7 @@ function initMap() {
       if (typeof markerCurrentAddress != 'undefined') {
         markerCurrentAddress.setMap(null);
       }
-      
+
       $('.wrap-list-address ul').empty();
       var selectedFilterValue = this.value;
       listFiltered = [];
@@ -535,7 +530,7 @@ function initMap() {
 
       currentAddress = listFiltered[0];
     })
-    
+
     $('#filter-district').change(function () {
 
       if (typeof showRouteServiceChiDuong != 'undefined') {
@@ -587,7 +582,7 @@ function initMap() {
         lat: listFilteredBoth[0].lat,
         lng: listFilteredBoth[0].lng
       });
-     
+
 
       showMarker(listFilteredBoth);
       currentAddress = listFilteredBoth[0];
